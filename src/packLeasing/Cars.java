@@ -9,4 +9,11 @@ public class Cars extends Vehicles {
 		return Attributes.TYPE_CAR;
 	}
 
+	@Override
+	public String toString() {
+		return "Cars []"; //TODO
+	}
+	
+	
+
 }

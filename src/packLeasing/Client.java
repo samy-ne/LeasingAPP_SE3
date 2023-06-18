@@ -3,7 +3,7 @@ package packLeasing;
 import java.util.ArrayList;
 
 public class Client extends Person {
-	ArrayList<Contract> _my_contracts;
+	private ArrayList<Contract> _my_contracts;
 	
 	
 
