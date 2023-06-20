@@ -1,8 +1,15 @@
 package packLeasing;
 
 public class Cars extends Vehicles {
-
+	// members
 	
+	
+	
+	// constructor
+	
+	
+	
+	// override
 	
 	@Override
 	public Integer getType() {
@@ -15,5 +22,6 @@ public class Cars extends Vehicles {
 	}
 	
 	
-
+	
+	// getters & setters
 }

@@ -3,8 +3,22 @@ package packLeasing;
 import java.util.ArrayList;
 
 public class Admin extends Person{
-
 	
+	// members
+	
+	// constructors
+	
+	// override
+	
+	// getters & setters
+	
+	
+	
+	
+	
+	
+	
+	// main methods
 	public void addVehicles(Vehicles newVehicle, ArrayList<Vehicles> all_vehicles) {
 		
 	}
@@ -20,7 +34,6 @@ public class Admin extends Person{
 	public void showClients (ArrayList<Vehicles> all_clients) {
 
 	}
-	test
 	
 	
 }

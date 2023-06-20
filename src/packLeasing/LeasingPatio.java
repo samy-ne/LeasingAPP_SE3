@@ -3,11 +3,12 @@ package packLeasing;
 import java.util.ArrayList;
 
 public class LeasingPatio {
+	// members
 	ArrayList<Vehicles> _all_vehicles;
 	ArrayList<Client> _all_clients;
 	ArrayList<Admin> _all_admins;
 	
-	
+	// constructors
 	public LeasingPatio(ArrayList<Vehicles> _all_vehicles, ArrayList<Client> _all_clients,
 			ArrayList<Admin> _all_admins) {
 		this._all_vehicles = _all_vehicles;
@@ -20,5 +21,9 @@ public class LeasingPatio {
 		this._all_clients = new ArrayList<Client>();
 		this._all_admins = new ArrayList<Admin>();
 	}
+	
+		// override
+		
+		// getters & setters
 
 }

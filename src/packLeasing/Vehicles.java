@@ -3,6 +3,7 @@ package packLeasing;
 import javax.naming.InterruptedNamingException;
 
 public abstract class Vehicles {
+	// members
 	static Integer _counter = 0;
 	String _color;
 	Integer _renting_price;
@@ -32,7 +33,13 @@ public abstract class Vehicles {
 	public Vehicles() {
 		this(null, Attributes.NOT_FOR_RENT, Attributes.NOT_FOR_SALE, null, null, null);
 	}
-
+	
+	
+			
+	// override
+	
+		
+	// getters & setters
 	public String get_color() {
 		return _color;
 	}
