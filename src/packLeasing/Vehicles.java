@@ -11,12 +11,12 @@ public abstract class Vehicles {
 	String _model;
 	Integer _age;
 	Integer _id;
-//  Image _picture;
+    String _image_path;
 	
 	
 	//Constructors
 	public Vehicles(String _color, Integer _renting_price, Integer _buying_price, String _brand, String _model,
-			Integer _age) {
+			Integer _age, String _image_path) {
 		Vehicles._counter =+ 1;
 		
 		this._color = _color;
@@ -25,12 +25,13 @@ public abstract class Vehicles {
 		this._brand = _brand;
 		this._model = _model;
 		this._age = _age;
+		this._image_path = _image_path;
 		this._id = Vehicles._counter;
 		
 	}
 	
 	public Vehicles() {
-		this(null, Attributes.NOT_FOR_RENT, Attributes.NOT_FOR_SALE, null, null, null);
+		this(null, Attributes.NOT_FOR_RENT, Attributes.NOT_FOR_SALE, null, null, null, null);
 	}
 
 	public String get_color() {
@@ -81,7 +82,13 @@ public abstract class Vehicles {
 		this._age = _age;
 	}
 
-	
+	public String get_image_path() {
+		return _image_path;
+	}
+
+	public void set_image_path(Integer _age) {
+		this._image_path = _image_path;
+	}
 	
 	// abstract functions
 	abstract public Integer getType(); 
