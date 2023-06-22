@@ -4,28 +4,28 @@
 
 methods:
 
- ->displayVehiclesFromSearch
+    ->displayVehiclesFromSearch
  
  fields:
  
- ->_my_contracts
+    ->_my_contracts
 
  
 **Admin**
 
 methods:
 
-->
+   ->
 
 fields:
 
-->
+   ->
 
 **Vehicle** 
 
 methods:
  
- -> basic constructor
+    -> basic constructor
 
 **Cars** 
 
