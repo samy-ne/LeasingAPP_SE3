@@ -69,7 +69,9 @@ public class LoginPage implements ActionListener {
             // ...
             //************ add an "if" to check if login was good !!!!!! : 
             f.dispose();
-            MainPage mainPage = new MainPage();		//if the login was good - lunch the main system. 
+            ClientMainPage clientMainPage = new ClientMainPage();		//if its client - lunch client main system.
+            //AdminMainPage adminMainPage = new AdminMainPage();		//if its admin - lunch admin main system. 
+            //WorkerMainPage workerMainPage = new workerMainPage();		//if its worker - lunch worker main system. 
             //LoginPage login = new LoginPage(1);	//if the login was wrong - run this! 
             
         });
