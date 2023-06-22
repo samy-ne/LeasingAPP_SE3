@@ -10,14 +10,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
-public class ClientMainPage implements ActionListener {
-    JFrame f = new JFrame("Client Page"); // set a topic
+public class WorkerMainPage implements ActionListener {
+    JFrame f = new JFrame("Worker Page"); // set a topic
     // creates the buttons
-    JButton checkButton = new JButton("Check my cars");
-    JButton rentButton = new JButton("Rent a car");
-    JButton buyButton = new JButton("Buy a car");
+    JButton carsButton = new JButton("Cars details");
+    JButton cleintsButton = new JButton("Client details");
+    //JButton mySalary = new JButton("Salary"); ???????
 
-    ClientMainPage() {
+
+    WorkerMainPage() {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(800, 600); // set size
         f.setLocationRelativeTo(null); // Center the frame on the screen
@@ -38,20 +39,16 @@ public class ClientMainPage implements ActionListener {
         int panelWidth = 800;
         int panelHeight = 600;
 
-        checkButton.setFont(new Font("Arial", Font.BOLD, 20));
-        checkButton.setBounds(5, 5, 250, 550);
-        checkButton.addActionListener(this);
-        panel.add(checkButton);
+        carsButton.setFont(new Font("Arial", Font.BOLD, 20));
+        carsButton.setBounds(50, 5, 300, 550);
+        carsButton.addActionListener(this);
+        panel.add(carsButton);
 
-        rentButton.setFont(new Font("Arial", Font.BOLD, 20));
-        rentButton.setBounds(267,5,250,550);
-        rentButton.addActionListener(this);
-        panel.add(rentButton);
+        cleintsButton.setFont(new Font("Arial", Font.BOLD, 20));
+        cleintsButton.setBounds(450,5,300,550);
+        cleintsButton.addActionListener(this);
+        panel.add(cleintsButton);
 
-        buyButton.setFont(new Font("Arial", Font.BOLD, 20));
-        buyButton.setBounds(530,5,250,550);
-        buyButton.addActionListener(this);
-        panel.add(buyButton);
 
         ImageIcon backgroundImageIcon = new ImageIcon("C:\\Users\\User\\eclipse-workspace\\LeasingAPP_SE3\\src\\packLeasing\\images\\back.jpg"); // Replace with the path to your image
         JLabel backgroundImageLabel = new JLabel(backgroundImageIcon);
@@ -66,18 +63,15 @@ public class ClientMainPage implements ActionListener {
     
     @Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==checkButton) {
+		if (e.getSource()==carsButton) {
 			f.dispose();
 			//ClientDataPage clientDataPage = new ClientDataPage
 		}
-		if (e.getSource()==buyButton) {
+		if (e.getSource()==cleintsButton) {
 			f.dispose();
 			//ClientBuyPage clientBuyPage = new ClientBuyPage
 		}
-		if (e.getSource()==rentButton) {
-			f.dispose();
-			//ClientRentPage clientRentPage = new ClientRentPage
-		}
+
 		
 	}
     

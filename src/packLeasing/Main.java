@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		LoginPage startPage = new LoginPage(0);
+		LoginPage loginPage = new LoginPage(1);
 		
 		LeasingPatio my_patio = new LeasingPatio();
 		

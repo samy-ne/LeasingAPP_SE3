@@ -71,8 +71,8 @@ public class LoginPage implements ActionListener {
             f.dispose();
             ClientMainPage clientMainPage = new ClientMainPage();		//if its client - lunch client main system.
             //AdminMainPage adminMainPage = new AdminMainPage();		//if its admin - lunch admin main system. 
-            //WorkerMainPage workerMainPage = new workerMainPage();		//if its worker - lunch worker main system. 
-            //LoginPage login = new LoginPage(1);	//if the login was wrong - run this! 
+            //WorkerMainPage workerMainPage = new WorkerMainPage();		//if its worker - lunch worker main system. 
+            //LoginPage login = new LoginPage(0);	//if the login was wrong - run this! 
             
         });
         
