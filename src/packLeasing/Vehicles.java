@@ -106,8 +106,8 @@ public abstract class Vehicles {
 	public boolean is_available() {
 		return _available;
 	}
-	public void set_available(boolean _available) {
-		this._available = _available;
+	public void set_available(boolean available) {
+		this._available = available;
 	}
 
 	

@@ -17,10 +17,10 @@ public class Attributes {
 	static final Integer MOTOR_GAS = 1;
 	static final Integer MOTOR_HYBRID = 2;
 
-
-
-
 	
+	
+
+	// User Attributes
 	static final Integer INVALID_USER = 0 ;
 	static final Integer ADMIN = 1;
 	static final Integer CLIENT = 2;

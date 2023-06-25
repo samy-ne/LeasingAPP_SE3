@@ -17,12 +17,12 @@ public class Contract {
 		this._vehicle = _vehicle;
 	}
 
+	
+	// override
 	@Override
 	public String toString() {
 		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
 	}
-	
-	// override
 	
 	
 		
