@@ -1,9 +1,7 @@
 package packLeasing;
-import java.util.Scanner; //to get input from user
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
+import java.util.Scanner; //to get input from user
 
 public class Main {
 	public static Scanner input = new Scanner(System.in); //Create a Scanner object
@@ -33,13 +31,13 @@ public class Main {
 	        if (authenticated) {
 	            int userType = login.getUserType(username);
 
-	            if (userType==Attributes.Admin) {
+	            if (userType==Attributes.ADMIN) {
 	            	 // TODO AdminWindow(); 
 	            } 
-	            else if (userType==Attributes.Client) {
+	            else if (userType==Attributes.CLIENT) {
 	            	// TODO ClientWindow();
 	            } 
-	            else if (userType==Attributes.Worker) {
+	            else if (userType==Attributes.WORKER) {
 	            	 // TODO WorkerWindow();
 	            }
 	        } else {
@@ -54,11 +52,11 @@ public class Main {
 		
 		Collections.sort(my_patio._all_vehicles, new CompareClass.PriceComparator());
 		Cars vehicle1 =  new Cars("Orange", 0, 800000, "Toyota", "2023 GR86 Special Edition",
-				0, "ToyotaGR86Resized.png");
+				0, "ToyotaGR86Resized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle2 =  new Cars("Gray", 0, 800000, "Telsa", "2023 Model S",
-				0, "TeslaModelSGrayResized.png");
+				0, "TeslaModelSGrayResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle3 =  new Cars("White", 0, 800000, "Tesla", "2023 Model Y",
-				0, "TeslaModelYWhiteResized.png");
+				0, "TeslaModelYWhiteResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		ArrayList<Vehicles> _all_vehicles = new ArrayList<Vehicles> ();
 		_all_vehicles.add(vehicle1);
 		_all_vehicles.add(vehicle2);
@@ -66,7 +64,7 @@ public class Main {
 		main_Client(_all_vehicles);
 	}
 	
-	public static void main_Admin() {		
+	public static void main_Admin() {
 		;
 	}
 	

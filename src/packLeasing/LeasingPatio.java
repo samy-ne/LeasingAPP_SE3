@@ -8,6 +8,7 @@ public class LeasingPatio {
 	ArrayList<Client> _all_clients;
 	ArrayList<Admin> _all_admins;
 	
+	
 	// constructors
 	public LeasingPatio(ArrayList<Vehicles> _all_vehicles, ArrayList<Client> _all_clients,
 			ArrayList<Admin> _all_admins) {

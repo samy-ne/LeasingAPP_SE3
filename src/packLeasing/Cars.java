@@ -2,18 +2,21 @@ package packLeasing;
 
 public class Cars extends Vehicles {
 	// members
-	
+	private Integer _motor;
+	private Integer _gears;
+	private Integer _roof;
 	
 	
 	// constructor
-	public Cars(String string, int i, int j, String string2, String string3, int k, String string4) {
-		super( string,  i, j,  string2,  string3, k, string4);
-		
+	public Cars(String color, int rent_price, int buy_price, String brand, String model, int age, String img_path, Integer motor, Integer roof, Integer gears) {
+		super(color, rent_price, buy_price, brand, model, age, img_path);
+		this._gears = gears;
+		this._roof = roof;
+		this._motor = motor;
 	}
 	
 	
 	// override
-	
 	@Override
 	public Integer getType() {
 		return Attributes.TYPE_CAR;
@@ -21,11 +24,27 @@ public class Cars extends Vehicles {
 
 	@Override
 	public String toString() {
-		return "Cars []"; //TODO
+		return "Car []"; //TODO - should print the img
+	}
+
+
+	// getters & setters
+	public Integer get_motor() {
+		return _motor;
+	}
+
+
+	public Integer get_gears() {
+		return _gears;
+	}
+
+
+	public Integer get_roof() {
+		return _roof;
 	}
 	
 	
 	
 	
-	// getters & setters
+	
 }

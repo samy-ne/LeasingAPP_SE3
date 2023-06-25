@@ -16,8 +16,15 @@ public class Contract {
 		this._finish = _finish;
 		this._vehicle = _vehicle;
 	}
+
+	@Override
+	public String toString() {
+		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
+	}
 	
 	// override
+	
+	
 		
 	// getters & setters
 

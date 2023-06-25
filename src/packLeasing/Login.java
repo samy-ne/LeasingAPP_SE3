@@ -29,7 +29,7 @@ public class Login {
             return userInfo.getUserType();
         }
         else {
-        	return Attributes.NoSuchUser;
+        	return Attributes.INVALID_USER;
         }
     }
 

@@ -8,10 +8,23 @@ public class Attributes {
 	static final Integer TYPE_CAR = 1;
 	static final Integer TYPE_MOTORCYCLE = 2;
 	
-	static final Integer NoSuchUser = 0 ;
-	static final Integer Admin = 1;
-	static final Integer Client = 2;
-	static final Integer Worker = 3;
+	// Cars Attributes
+	static final Integer GEARS_AUTOMATIC = 0;
+	static final Integer GEARS_MANUAL = 1;
+	static final Integer ROOF_OPENED = 0;
+	static final Integer ROOF_CLOSED = 1;
+	static final Integer MOTOR_ELETRIC = 0;
+	static final Integer MOTOR_GAS = 1;
+	static final Integer MOTOR_HYBRID = 2;
+
+
+
+
+	
+	static final Integer INVALID_USER = 0 ;
+	static final Integer ADMIN = 1;
+	static final Integer CLIENT = 2;
+	static final Integer WORKER = 3;
 
 
 }
