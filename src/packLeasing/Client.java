@@ -9,13 +9,20 @@ public class Client extends Person {
 	
 	
 	// constructors
+
+	public Client() {
+		this(null);
+	}
 	public Client(ArrayList<Contract> _my_contracts) {
 		super();
 		this._my_contracts = _my_contracts;
 	}
-	
-	public Client() {
-		this(null);
+
+
+
+	public void displayVehiclesFromSearch(ArrayList<Vehicles> _matching_vehicles) {
+		int num = 0;
+	    new  OptionPaneExample(num, _matching_vehicles );  
 	}
 
 	

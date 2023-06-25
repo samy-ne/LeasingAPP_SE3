@@ -10,6 +10,7 @@ public class Contract {
 	
 	// constructor
 	public Contract(LocalDate _start, LocalDate _finish, Vehicles _vehicle) {
+		//this method is a constructor for a contract ;)
 		super();
 		this._start = _start;
 		this._finish = _finish;

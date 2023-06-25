@@ -3,6 +3,7 @@ package packLeasing;
 import java.util.ArrayList;
 
 public class Admin extends Person{
+
 	
 	// members
 	
