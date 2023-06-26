@@ -9,26 +9,32 @@ import javax.swing.*;
 
 //crating a simple window with Java Swing. 
 
-public class LoginPage implements ActionListener {
+public class SignUpPage implements ActionListener {
 
-	JFrame f = new JFrame("User Login");	 //set a topic
-	JButton signIn = new JButton("submit");
+	JFrame f = new JFrame("User signUp");	 //set a topic
 	JButton signUp = new JButton("sign up");
 	
 
-	LoginPage(int i){
+	SignUpPage(){
 
 		f.setSize(600,600);		//size of the page - (width,length) 
 		f.setLayout(null);
         f.setLocationRelativeTo(null); // Center the frame on the screen
 
 		//creating labels: 
+        
+        JLabel headLine = new JLabel("Creating new account");
+        headLine.setBounds(190, 10, 300, 30);
+        headLine.setForeground(Color.WHITE); // Set the text color to white
+        headLine.setFont(new Font(headLine.getFont().getName(), Font.BOLD, 20)); // Set the font size to 20 and make it bold
+        f.add(headLine);
+        
 		JLabel userLabel = new JLabel("Username: ");
-		userLabel.setBounds(100,50,100,30);
+		userLabel.setBounds(100,70,100,30);
 		userLabel.setFont(userLabel.getFont().deriveFont(Font.BOLD)); // Make the font bold
 		f.add(userLabel);
 		JTextField t1 = new JTextField(20);		//field in length of 20 chars.
-		t1.setBounds(200, 50, 200, 30);
+		t1.setBounds(200, 70, 200, 30);
 		f.add(t1);
 		
 		JLabel passwordLabel = new JLabel("Password: ");
@@ -39,26 +45,12 @@ public class LoginPage implements ActionListener {
 		passwordField.setBounds(200, 120, 200, 30);
 		f.add(passwordField);
 		
-		//if details are not good - open new win for renter user name and password but this time a msg will show. 
-		if(i==0) {
-			JLabel wrongPass = new JLabel("Wrong Username or Password, please try agine.");
-			wrongPass.setBounds(130, 250, 300, 30);
-			wrongPass.setFont(userLabel.getFont().deriveFont(Font.BOLD)); // Make the font bold
-	        wrongPass.setForeground(Color.WHITE); // Set the foreground color to white
-	        wrongPass.setBackground(Color.RED); // Set the background color to red
-	        wrongPass.setOpaque(true); // Make the background color visible
-			f.add(wrongPass);
-
-		}
 		
 		//setting buttons:
-		signIn.setBounds(240, 170, 100, 30);
-		signIn.addActionListener(this);
-		f.add(signIn);
-		
-		signUp.setBounds(240, 210, 100, 30);
+		signUp.setBounds(240, 170, 100, 30);
 		signUp.addActionListener(this);
 		f.add(signUp);
+
 		
 		// Adding an image:
         ImageIcon imageIcon = new ImageIcon("C:\\Users\\User\\eclipse-workspace\\LeasingAPP_SE3\\src\\packLeasing\\images\\openScreen.jpg"); // Replace with the actual path to your image
@@ -67,7 +59,7 @@ public class LoginPage implements ActionListener {
         f.add(imageLabel);
 		
         
-        signIn.addActionListener(e -> {
+        signUp.addActionListener(e -> {
             char[] password = passwordField.getPassword();
             String username = t1.getText();
             // Perform login logic with the username and password
@@ -92,8 +84,7 @@ public class LoginPage implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == signUp) {
-			f.dispose();
-			SignUpPage signUpPage = new SignUpPage();
+			LoginPage login = new LoginPage(1);
 		}
 		
 	}
