@@ -14,7 +14,7 @@ public class AdminMainPage implements ActionListener {
     JFrame f = new JFrame("Admin Page"); // set a topic
     // creates the buttons
     JButton carsButton = new JButton("Cars details");
-    JButton cleintsButton = new JButton("Client details");
+    JButton clientsButton = new JButton("Client details");
     JButton sellButton = new JButton("Sell a car");
     JButton buyButton = new JButton("Buy new cars");
 
@@ -44,10 +44,10 @@ public class AdminMainPage implements ActionListener {
         carsButton.addActionListener(this);
         panel.add(carsButton);
 
-        cleintsButton.setFont(new Font("Arial", Font.BOLD, 20));
-        cleintsButton.setBounds(200,5,190,550);
-        cleintsButton.addActionListener(this);
-        panel.add(cleintsButton);
+        clientsButton.setFont(new Font("Arial", Font.BOLD, 20));
+        clientsButton.setBounds(200,5,190,550);
+        clientsButton.addActionListener(this);
+        panel.add(clientsButton);
 
         sellButton.setFont(new Font("Arial", Font.BOLD, 20));
         sellButton.setBounds(395,5,190,550);
@@ -76,9 +76,9 @@ public class AdminMainPage implements ActionListener {
 			f.dispose();
 			//ClientDataPage clientDataPage = new ClientDataPage
 		}
-		if (e.getSource()==cleintsButton) {
+		if (e.getSource()==clientsButton) {
 			f.dispose();
-			//ClientBuyPage clientBuyPage = new ClientBuyPage
+			//ListOfClientsPage clientList = new ListOfClientsPage(***insert the clients vector***);
 		}
 		if (e.getSource()==sellButton) {
 			f.dispose();

@@ -11,7 +11,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		LoginPage loginpage = new LoginPage(1);
+		//LoginPage loginpage = new LoginPage(1);
+		ListOfClientsPage hi = new ListOfClientsPage();
 		
 	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
 		//static final Integer NoSuchUser = 0 ;
