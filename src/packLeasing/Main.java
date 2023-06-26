@@ -4,10 +4,15 @@ import java.util.Collections;
 import java.util.Scanner; //to get input from user
 
 public class Main {
-	public static Scanner input = new Scanner(System.in); //Create a Scanner object
+	
+	
+	//public static Scanner input = new Scanner(System.in); //Create a Scanner object
 	
 	
 	public static void main(String[] args) {
+		
+		LoginPage loginpage = new LoginPage(1);
+		
 	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
 		//static final Integer NoSuchUser = 0 ;
 		//static final Integer Admin = 1;
