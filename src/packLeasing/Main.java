@@ -12,47 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//LoginPage loginpage = new LoginPage(1);
-		ListOfClientsPage hi = new ListOfClientsPage();
-		
-	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
-		//static final Integer NoSuchUser = 0 ;
-		//static final Integer Admin = 1;
-		//static final Integer Client = 2;
-		//static final Integer Worker = 3;
-	    Login login = new Login();
-	    boolean authenticated = false;
-	    Scanner scanner = new Scanner(System.in);
-
-	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
-
-	    while (!authenticated) {
-	        // Get username and password from the user
-	        System.out.print("Enter username: ");
-	        String username = scanner.nextLine();
-	        System.out.print("Enter password: ");
-	        String password = scanner.nextLine();
-
-	        authenticated = login.verifyPassword(username, password);
-
-	        if (authenticated) {
-	            int userType = login.getUserType(username);
-
-	            if (userType==Attributes.ADMIN) {
-	            	 // TODO AdminWindow(); 
-	            } 
-	            else if (userType==Attributes.CLIENT) {
-	            	// TODO ClientWindow();
-	            } 
-	            else if (userType==Attributes.WORKER) {
-	            	 // TODO WorkerWindow();
-	            }
-	        } else {
-	        	// TODO window of "Wrong username or password. Please try again.");
-	        }
-	    }
-	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
-		
-		
+		//ListOfClientsPage hi = new ListOfClientsPage();
 		
 		LeasingPatio my_patio = new LeasingPatio();
 		
