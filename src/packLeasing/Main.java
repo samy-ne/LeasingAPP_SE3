@@ -11,9 +11,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//LoginPage loginpage = new LoginPage(1);
+		LoginPage loginpage = new LoginPage(1);
 		//ListOfClientsPage hi = new ListOfClientsPage();
 		
+	/*	
 		LeasingPatio my_patio = new LeasingPatio();
 		
 		Collections.sort(my_patio._all_vehicles, new CompareClass.PriceComparator());
@@ -28,6 +29,9 @@ public class Main {
 		_all_vehicles.add(vehicle2);
 		_all_vehicles.add(vehicle3);
 		main_Client(_all_vehicles);
+		
+	*/
+		
 	}
 	
 	public static void main_Admin() {
@@ -40,3 +44,4 @@ public class Main {
 	}
     
 }
+

@@ -11,7 +11,7 @@ public class Login {
     }
 
     // Add usernames, passwords, and user types to the map
-    public void addUser(String username, String password, int userType) {
+    public void addUser(String username, char[] password, int userType) {
         userAndPass.put(username, new UserInfo(username, password, userType));
     }
 
