@@ -165,7 +165,7 @@ public class MyFrame extends JFrame implements ActionListener {
 			if (val[0]=="Sort by price from lowest to highest") {
 				//sortBuyingPriceLowToHighMyFrame(_vehicles);
 				//sortColor(sortBuyingPriceLowToHighMyFrame(_vehicles),val[1]);
-				sortType(sortBrand(sortColor( sortBuyingPriceHighToLowMyFrame(_vehicles),val[1]),val[2]),val[3]);
+				sortType(sortBrand(sortColor( sortBuyingPriceLowToHighMyFrame(_vehicles),val[1]),val[2]),val[3]);
 				System.out.println("check done");
 				AvailableCarsPage a = new AvailableCarsPage(_vehicles);
 				System.out.println("check2");
