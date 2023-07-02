@@ -5,21 +5,35 @@ import java.util.Collections;
 
 public class Client extends Person {	
 	// members
-
+	//ClientMainPage b = new ClientMainPage();
+	//String[] val =b.start();
+	ArrayList<Vehicles> _my_matching_vehicles ;
 	private ArrayList<Contract> _my_contracts;
-	
 	
 	// constructors
 
 	public Client() {
-		this(null);
+		this(null, null);
 	}
-	public Client(ArrayList<Contract> _my_contracts) {
+	public Client(ArrayList<Contract> _my_contracts,ArrayList<Vehicles> _all_vehicles ) {
 		super();
 		this._my_contracts = _my_contracts;
+		this._my_matching_vehicles = _all_vehicles;
+	}
+	public Client(ArrayList<Vehicles> _all_vehicles ) {
+		super();
+		this._my_contracts = _my_contracts;
+		this._my_matching_vehicles = _all_vehicles;
 	}
 
-
+	//public ArrayList<Vehicles> searchOptionManagment() {
+	//	if (val[0]=="Sort by price from lowest to highest") {
+		//	this.sortBuyingPriceHighToLow(_my_matching_vehicles);
+		//	AvailableCarsPage a = new AvailableCarsPage(_my_matching_vehicles);
+		//	System.out.println("check");
+		//}
+		//return null;
+	//}
 
 
 	
@@ -46,6 +60,10 @@ public class Client extends Person {
 	public ArrayList<Contract> get_my_contracts() {
 		return _my_contracts;
 	}
+	public ArrayList<Vehicles> get_vehicles(){
+		return _my_matching_vehicles;
+	}
+	
 	
 	
 	// Advanced methods
@@ -53,6 +71,20 @@ public class Client extends Person {
 		int num = 0;
 	    new  OptionPaneExample(num, _matching_vehicles );  
 	}
-
+	public ArrayList<Vehicles> sortBuyingPriceHighToLow(ArrayList<Vehicles> _matching_vehicles) {
+		int n = _matching_vehicles.size();
+		Vehicles temp;
+		for (int i = 0; i<n; i++) {
+			for (int j=1; j<(n-i); j++) {
+				 if (_matching_vehicles.get(j).get_buying_price().compareTo(_matching_vehicles.get(j-1).get_buying_price()) > 0) {
+					 temp = _matching_vehicles.get(j-1);
+					 _matching_vehicles.set((j-1),_matching_vehicles.get(j));
+					 _matching_vehicles.set(j,temp);
+				 }
+			}
+		}
+		return _matching_vehicles;
+		  
+	}
 	
 }
