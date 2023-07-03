@@ -2,7 +2,7 @@ package packLeasing;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner; //to get input from user
-
+import fileAPI.*;
 //import pack1.MyFrame;
 
 public class Main {
@@ -12,6 +12,11 @@ public class Main {
 	//stam 
 	
 	public static void main(String[] args) {
+		//fileAPI api = new fileAPI();
+		//api.returnUserPasswordMap().toString();
+		//api.insertNewUser("kaka", "123123");
+		
+		
 		LeasingPatio my_patio = new LeasingPatio();
 		//ArrayList<Vehicles> vehicles= my_patio.get_all_vehicles();
 		//LoginPage loginpage = new LoginPage(1);
@@ -111,6 +116,7 @@ public class Main {
 	}
 	
 	public static void main_Client(ArrayList<Vehicles> _all_vehicles) {
+		
 		Client Client = new Client(null);
 		Client.displayVehiclesFromSearch(_all_vehicles);
 	}
