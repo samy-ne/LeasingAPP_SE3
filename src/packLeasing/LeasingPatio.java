@@ -24,7 +24,9 @@ public class LeasingPatio {
 	}
 	
 		// override
-		
+	public ArrayList<Vehicles> get_all_vehicles() {
+		return _all_vehicles;
+	}
 		// getters & setters
 
 }

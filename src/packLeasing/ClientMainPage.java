@@ -3,6 +3,7 @@ package packLeasing;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,12 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
 public class ClientMainPage implements ActionListener {
+	Client client = new Client();
     JFrame f = new JFrame("Client Page"); // set a topic
     // creates the buttons
     JButton checkButton = new JButton("Check my cars");
     JButton rentButton = new JButton("Rent a car");
     JButton buyButton = new JButton("Buy a car");
-
+    ArrayList <Vehicles> _vehicles;
     ClientMainPage() {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(800, 600); // set size
@@ -53,7 +55,7 @@ public class ClientMainPage implements ActionListener {
         buyButton.addActionListener(this);
         panel.add(buyButton);
 
-        ImageIcon backgroundImageIcon = new ImageIcon("C:\\Users\\User\\eclipse-workspace\\LeasingAPP_SE3\\src\\packLeasing\\images\\back.jpg"); // Replace with the path to your image
+        ImageIcon backgroundImageIcon = new ImageIcon("back.jpg"); // Replace with the path to your image
         JLabel backgroundImageLabel = new JLabel(backgroundImageIcon);
         backgroundImageLabel.setBounds(00, 0, panelWidth, panelHeight);
         panel.add(backgroundImageLabel);
@@ -61,24 +63,51 @@ public class ClientMainPage implements ActionListener {
         f.add(panel);
 
     
-        f.setVisible(true); // must set as true to see the window
+        //f.setVisible(true); // must set as true to see the window
     }
-    
+    String[] returnVal= null;
     @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==checkButton) {
-			f.dispose();
+			//f.dispose();
 			//ClientDataPage clientDataPage = new ClientDataPage
 		}
 		if (e.getSource()==buyButton) {
-			f.dispose();
+			//f.dispose();
+			MyFrame frameSearch = new MyFrame();
+			frameSearch.start(_vehicles);
+			//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
+			//start(_vehicles);
+			//while(returnVal==null) {
+			//returnVal =frameSearch.get_Search_Options();
+			//}
+			// searchOptionManagment(returnVal);
 			//ClientBuyPage clientBuyPage = new ClientBuyPage
 		}
 		if (e.getSource()==rentButton) {
-			f.dispose();
+			//f.dispose();
+			MyFrame frameSearch = new MyFrame();
+			frameSearch.start(_vehicles);
+			
+			//String[] returnVal =frameSearch.get_Search_Options();
+			//while(returnVal==null) {
+			//	returnVal =frameSearch.get_Search_Options();
+			//	}
+			//frameSearch.sortBuyingPriceHighToLowMyFrame(_vehicles);
+			//searchOptionManagment(returnVal);
 			//ClientRentPage clientRentPage = new ClientRentPage
 		}
 		
 	}
+    public String[] start( ArrayList<Vehicles> vehicles) {
+    	this._vehicles=(vehicles);
+    	//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
+    	f.setVisible(true);
+    	return returnVal;
+    }
+    public ArrayList<Vehicles> get_vehicles() {
+    	return _vehicles;
+    }
+ 
     
 }
