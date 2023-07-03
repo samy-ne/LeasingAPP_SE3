@@ -2,7 +2,7 @@ package packLeasing;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner; //to get input from user
-import fileAPI.*;
+//import fileAPI.*;
 //import pack1.MyFrame;
 
 public class Main {
@@ -31,6 +31,8 @@ public class Main {
 				0, "png-clipart-2015-hyundai-accent-car-2013-hyundai-sonata-2013-hyundai-accent-hyundai-compact-car-sedan.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle5 =  new Cars("White", 0, 90000, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
 				0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+		System.out.println(vehicle4.get_id());
+		System.out.println(vehicle5.get_id());
 		ArrayList<Vehicles> _all_vehicles = new ArrayList<Vehicles> ();
 		_all_vehicles.add(vehicle1);
 		_all_vehicles.add(vehicle2);

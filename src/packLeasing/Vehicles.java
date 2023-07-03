@@ -95,7 +95,12 @@ public abstract class Vehicles {
 	public void set_age(Integer _age) {
 		this._age = _age;
 	}
-
+	public Integer get_id() {
+		return _id;
+	}
+	public void set_id(Integer _id) {
+		this._id = _id;
+	}
 	public String get_image_path() {
 		return _image_path;
 	}
