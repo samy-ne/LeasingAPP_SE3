@@ -9,7 +9,7 @@ public class Main {
 	
 	
 	//public static Scanner input = new Scanner(System.in); //Create a Scanner object
-	
+	//stam 
 	
 	public static void main(String[] args) {
 		LeasingPatio my_patio = new LeasingPatio();
