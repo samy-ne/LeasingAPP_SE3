@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
 public class ClientMainPage implements ActionListener {
+	Attributes Attributes = null;
 	Client client = new Client();
     JFrame f = new JFrame("Client Page"); // set a topic
     // creates the buttons

@@ -39,16 +39,15 @@ public class Client extends Person {
 	
 	// override
 	
-	@Override
-	public String toString() {
-		String new_str = new String();
-		new_str = super.toString();
-		new_str = new_str + "Client contracts: /n";
-		for (Contract contract : _my_contracts) {
-			new_str = new_str + contract.toString();
-		}
-		return new_str;
-	}
+	//public String toString() {
+	//	String new_str = new String();
+	//	new_str = super.toString();
+		//new_str = new_str + "Client contracts: /n";
+		//for (Contract contract : _my_contracts) {
+		//	new_str = new_str + contract.toString();
+		//}
+		//return new_str;
+	//}
 	
 	
 	// getters & setters
@@ -88,3 +87,4 @@ public class Client extends Person {
 	}
 	
 }
+

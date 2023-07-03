@@ -3,6 +3,7 @@ package packLeasing;
 import java.util.ArrayList;
 
 public class LeasingPatio {
+	Attributes Attributes = null;
 	// members
 	ArrayList<Vehicles> _all_vehicles;
 	ArrayList<Client> _all_clients;

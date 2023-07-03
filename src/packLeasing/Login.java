@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Login {
+	Attributes Attributes = null;
     private Map<String, UserInfo> userAndPass;
 
     public Login() {
