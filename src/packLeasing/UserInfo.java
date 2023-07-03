@@ -3,12 +3,12 @@ package packLeasing;
 // Inner class representing user information
 public class UserInfo {
     private String username;
-    private String password;
+    private char[] password;
     private int userType;
 
-    public UserInfo(String username, String password, int userType) {
+    public UserInfo(String username, char[] password2, int userType) {
         this.username = username;
-        this.password = password;
+        this.password = password2;
         this.userType = userType;
     }
 
@@ -16,7 +16,7 @@ public class UserInfo {
         return username;
     }
 
-    public String getPassword() {
+    public char[] getPassword() {
         return password;
     }
 

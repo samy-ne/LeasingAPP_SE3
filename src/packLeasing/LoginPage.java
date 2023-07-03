@@ -17,7 +17,10 @@ public class LoginPage implements ActionListener {
 	
 
 	LoginPage(int i){
-
+		
+ 
+		
+		
 		f.setSize(600,600);		//size of the page - (width,length) 
 		f.setLayout(null);
         f.setLocationRelativeTo(null); // Center the frame on the screen
@@ -68,16 +71,53 @@ public class LoginPage implements ActionListener {
 		
         
         signIn.addActionListener(e -> {
-            char[] password = passwordField.getPassword();
+        	char[] passwordChar = passwordField.getPassword();
+        	String password = new String(passwordChar);
             String username = t1.getText();
             // Perform login logic with the username and password
-            // ...
-            //************ add an "if" to check if login was good !!!!!! : 
-            f.dispose();
-            ClientMainPage clientMainPage = new ClientMainPage();		//if its client - lunch client main system.
-            //AdminMainPage adminMainPage = new AdminMainPage();		//if its admin - lunch admin main system. 
-            //WorkerMainPage workerMainPage = new WorkerMainPage();		//if its worker - lunch worker main system. 
-            //LoginPage login = new LoginPage(0);	//if the login was wrong - run this! 
+            System.out.println(username);
+            System.out.println(password);
+    		// login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~               
+    		//static final Integer NoSuchUser = 0 ;
+    		//static final Integer Admin = 1;
+    		//static final Integer Client = 2;
+    		//static final Integer Worker = 3;
+    	    Login login = new Login();
+    	    boolean authenticated = false;
+    	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
+    	    
+
+           
+    	    // TODO if someone press sign in show window of sign in
+    		// $$$$$$$$$ sign in start $$$$$$$$$             
+    	    authenticated = login.verifyPassword(username, password);//check if password+user OK(?!)
+    	    if (authenticated) { //if password is good open the right window
+    	    	int userType = login.getUserType(username);
+    	    	if (userType==Attributes.ADMIN) {
+    	    		// show AdminWindow();
+    	    		f.dispose();
+    	    		AdminMainPage adminMainPage = new AdminMainPage();
+    	    		} 
+    	    	else if (userType==Attributes.CLIENT) {
+    	    		// TODO show ClientWindow();
+    	    		f.dispose();
+    	    		ClientMainPage clientMainPage = new ClientMainPage();
+    	    		} 
+    	    	else if (userType==Attributes.WORKER) {
+    	    		// TODO show WorkerWindow();
+    	    		f.dispose();
+    	    		WorkerMainPage workerMainPage = new WorkerMainPage();
+    	    		}
+    	        }
+    	    else {//try again 
+    	    	// TODO show window of "Wrong username or password. Please try again.");
+    	    	f.dispose();
+    	    	LoginPage loginPage = new LoginPage(0);
+    	        }
+    	    
+    		// $$$$$$$$$ sign in end $$$$$$$$$             
+    	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+    	    
             
         });
         
@@ -92,6 +132,7 @@ public class LoginPage implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == signUp) {
+			
 			f.dispose();
 			SignUpPage signUpPage = new SignUpPage();
 		}
@@ -99,6 +140,5 @@ public class LoginPage implements ActionListener {
 	}
 
 
-	
 }
 	
