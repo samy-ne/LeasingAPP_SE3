@@ -8,7 +8,7 @@ import java.util.Scanner; //to get input from user
 public class Main {
 	
 	
-	//public static Scanner input = new Scanner(System.in); //Create a Scanner object
+	
 	
 	
 	public static void main(String[] args) {
