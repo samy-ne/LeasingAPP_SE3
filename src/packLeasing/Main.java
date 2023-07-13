@@ -25,11 +25,11 @@ public class Main {
 				0, "ToyotaGR86Resized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle2 =  new Cars("Gray", 2000, 50000, "Tesla", "2023 Model S",
 				0, "TeslaModelSGrayResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
-		Cars vehicle3 =  new Cars("White", 0, 70000, "Tesla", "2023 Model Y",
+		Cars vehicle3 =  new Cars("White", 3000, 70000, "Tesla", "2023 Model Y",
 				0, "TeslaModelYWhiteResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
-		Cars vehicle4 =  new Cars("White", 2000, 75000, "Hyundai", "SONATA",
+		Cars vehicle4 =  new Cars("White", 1000, 75000, "Hyundai", "SONATA",
 				0, "png-clipart-2015-hyundai-accent-car-2013-hyundai-sonata-2013-hyundai-accent-hyundai-compact-car-sedan.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
-		Cars vehicle5 =  new Cars("White", 0, 90000, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
+		Cars vehicle5 =  new Cars("White", 0, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
 				0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		System.out.println(vehicle4.get_id());
 		System.out.println(vehicle5.get_id());

@@ -68,7 +68,7 @@ public class Client extends Person {
 	// Advanced methods
 	public void displayVehiclesFromSearch(ArrayList<Vehicles> _matching_vehicles) {
 		int num = 0;
-	    new  OptionPaneExample(num, _matching_vehicles );  
+	    new  OptionPaneExample(num,0, _matching_vehicles );  
 	}
 	public ArrayList<Vehicles> sortBuyingPriceHighToLow(ArrayList<Vehicles> _matching_vehicles) {
 		int n = _matching_vehicles.size();

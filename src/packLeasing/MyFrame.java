@@ -16,7 +16,7 @@ import java.awt.event.*;
 import javax.swing.*;
 public class MyFrame extends JFrame implements ActionListener {
 
-
+	int _buyOrRent;
 	String[] _options = new String[4];
 	ArrayList <Vehicles> _vehicles =new ArrayList<Vehicles>();;
 	    JFrame f = new JFrame("Client Search Page"); // set a topic
@@ -144,12 +144,13 @@ public class MyFrame extends JFrame implements ActionListener {
 	    //	return _options;
 	    //}
 	    
-	    public void start(ArrayList<Vehicles> vehicles) {
+	    public void start(ArrayList<Vehicles> vehicles,int buyOrRent) {
 	    	//Cars //vehicletrial =  new Cars("White", 0, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
 					//0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 	    	//this._vehicles.add(vehicletrial);
 	    	//this._vehicles.add(vehicletrial);
 	    	this._vehicles.addAll(vehicles);
+	    	this._buyOrRent=buyOrRent;
 	    	//this._vehicles=vehicles;
 	    	f.setVisible(true);
 	    }
@@ -165,17 +166,28 @@ public class MyFrame extends JFrame implements ActionListener {
 			if (val[0]=="Sort by price from lowest to highest") {
 				//sortBuyingPriceLowToHighMyFrame(_vehicles);
 				//sortColor(sortBuyingPriceLowToHighMyFrame(_vehicles),val[1]);
-				sortType(sortBrand(sortColor( sortBuyingPriceLowToHighMyFrame(_vehicles),val[1]),val[2]),val[3]);
+				if(_buyOrRent==0) {
+					sortType(sortBrand(sortColor( sortBuyingPriceLowToHighMyFrame(_vehicles),val[1]),val[2]),val[3]);
+				}else {
+					sortType(sortBrand(sortColor( sortRentingPriceLowToHighMyFrame(_vehicles),val[1]),val[2]),val[3]);
+				}
 				System.out.println("check done");
-				AvailableCarsPage a = new AvailableCarsPage(_vehicles);
+				//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
+				 new  OptionPaneExample(0,_buyOrRent, _vehicles);
 				System.out.println("check2");
 				//_vehicles=_vehicles_original;
 			}else {
 				//sortBuyingPriceHighToLowMyFrame(_vehicles);
-				ArrayList<Vehicles> vehicleARR= sortBuyingPriceHighToLowMyFrame(_vehicles);
+				ArrayList<Vehicles> vehicleARR;
+				if(_buyOrRent==0) {
+					vehicleARR= sortBuyingPriceHighToLowMyFrame(_vehicles);
+				}else {
+					vehicleARR= sortRentingPriceHighToLowMyFrame(_vehicles);
+				}
 				//sortColor( vehicleARR,val[1]);
 				sortType(sortBrand(sortColor( vehicleARR,val[1]),val[2]),val[3]);
-				AvailableCarsPage a = new AvailableCarsPage(_vehicles);
+				//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
+				new  OptionPaneExample(0,_buyOrRent, _vehicles);
 				System.out.println("check3");
 				//_vehicles=_vehicles_original;
 			}
@@ -212,6 +224,59 @@ public class MyFrame extends JFrame implements ActionListener {
 			return _matching_vehicles;
 			  
 		}
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    public ArrayList<Vehicles> sortRentingPriceLowToHighMyFrame(ArrayList<Vehicles> _matching_vehicles) {
+			int n = _matching_vehicles.size();
+			Vehicles temp;
+			for (int i = 0; i<n; i++) {
+				for (int j=1; j<(n-i); j++) {
+					 if (_matching_vehicles.get(j).get_renting_price().compareTo(_matching_vehicles.get(j-1).get_renting_price()) < 0) {
+						 temp = _matching_vehicles.get(j-1);
+						 _matching_vehicles.set((j-1),_matching_vehicles.get(j));
+						 _matching_vehicles.set(j,temp);
+					 }
+				}
+			}
+			return _matching_vehicles;
+			  
+		}
+	    public ArrayList<Vehicles> sortRentingPriceHighToLowMyFrame(ArrayList<Vehicles> _matching_vehicles) {
+			int n = _matching_vehicles.size();
+			Vehicles temp;
+			for (int i = 0; i<n; i++) {
+				for (int j=1; j<(n-i); j++) {
+					 if (_matching_vehicles.get(j).get_renting_price().compareTo(_matching_vehicles.get(j-1).get_renting_price()) > 0) {
+						 temp = _matching_vehicles.get(j-1);
+						 _matching_vehicles.set((j-1),_matching_vehicles.get(j));
+						 _matching_vehicles.set(j,temp);
+					 }
+				}
+			}
+			return _matching_vehicles;
+			  
+		}
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    //ArrayList<Vehicles> matching_colors;
 	    public ArrayList<Vehicles> sortColor(ArrayList<Vehicles> _matchingVehicles, String color) {
 			//int n = _matching_vehicles.size();

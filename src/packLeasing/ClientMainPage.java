@@ -76,7 +76,7 @@ public class ClientMainPage implements ActionListener {
 		if (e.getSource()==buyButton) {
 			//f.dispose();
 			MyFrame frameSearch = new MyFrame();
-			frameSearch.start(_vehicles);
+			frameSearch.start(_vehicles,0);
 			//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
 			//start(_vehicles);
 			//while(returnVal==null) {
@@ -88,7 +88,7 @@ public class ClientMainPage implements ActionListener {
 		if (e.getSource()==rentButton) {
 			//f.dispose();
 			MyFrame frameSearch = new MyFrame();
-			frameSearch.start(_vehicles);
+			frameSearch.start(_vehicles,1);
 			
 			//String[] returnVal =frameSearch.get_Search_Options();
 			//while(returnVal==null) {
