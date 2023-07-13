@@ -1,7 +1,12 @@
 package packLeasing;
+import files.*;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+
+import fileAPI.fileAPI;
 
 public class Login {
 	Attributes Attributes = null;
@@ -17,11 +22,19 @@ public class Login {
     }
 
     public boolean verifyPassword(String username, String password) {
+    	
+    	
         if (userAndPass.containsKey(username)) {
+        	System.out.println("contains");
             UserInfo userInfo = userAndPass.get(username);
-            return userInfo.getPassword().equals(password);
+            char[] storedPassword = userInfo.getPassword();
+            char[] inputPassword = password.toCharArray();
+            return Arrays.equals(storedPassword, inputPassword);
+            //return userInfo.getPassword().equals(password.toCharArray());
         }
         return false;
+    
+   
     }
 
     public int getUserType(String username) {
@@ -40,6 +53,36 @@ public class Login {
 		//Client = 2;
 		//Worker = 3;
     	// each line in the shape username:password:usertype
+    	fileAPI api = new fileAPI();
+    	Map<String, String> userPasswordmap = api.returnUserPasswordMap();
+    	Map<String, String> BossPasswordmap = api.returnBossPasswordMap();
+    	Map<String, String> WorkerPasswordmap = api.returnWorkerPasswordMap();
+    	
+    	// Adding users from userPasswordmap
+        for (Map.Entry<String, String> entry : userPasswordmap.entrySet()) {
+            String username = entry.getKey();
+            String password = entry.getValue();
+
+            userAndPass.put(username, new UserInfo(username, password.toCharArray(), Attributes.CLIENT));
+        }
+
+        // Adding users from BossPasswordmap
+        for (Map.Entry<String, String> entry : BossPasswordmap.entrySet()) {
+            String username = entry.getKey();
+            String password = entry.getValue();
+            userAndPass.put(username, new UserInfo(username, password.toCharArray(), Attributes.ADMIN));
+        }
+
+        // Adding users from WorkerPasswordmap
+        for (Map.Entry<String, String> entry : WorkerPasswordmap.entrySet()) {
+            String username = entry.getKey();
+            String password = entry.getValue();
+            userAndPass.put(username, new UserInfo(username, password.toCharArray(), Attributes.WORKER));
+        }
+    	
+    	System.out.println(userAndPass);
+    	
+    	
     }
     
 }

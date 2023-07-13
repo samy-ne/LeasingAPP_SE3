@@ -2,6 +2,8 @@ package packLeasing;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner; //to get input from user
+
+import fileAPI.fileAPI;
 //import fileAPI.*;
 //import pack1.MyFrame;
 
@@ -40,9 +42,11 @@ public class Main {
 		_all_vehicles.add(vehicle4);
 		_all_vehicles.add(vehicle5);
 		//Client Clientsample = new Client(my_patio.get_all_vehicles());
-		ClientMainPage Clientsample = new ClientMainPage();
-		//ClientMainPage b = new ClientMainPage();
-		String[] val =Clientsample.start(_all_vehicles);
+		
+		
+		
+		
+		
 		//Integer num =0;
 		//while (num==0) {
 			//Clientsample.searchOptionManagment();
@@ -65,9 +69,10 @@ public class Main {
 	    Login login = new Login();
 	    boolean authenticated = false;
 	    Scanner scanner = new Scanner(System.in);
-
+	    
 	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
-
+	    fileAPI api = new fileAPI();
+	    
 	    while (!authenticated) {
 	        // Get username and password from the user
 	        System.out.print("Enter username: ");
@@ -82,9 +87,19 @@ public class Main {
 
 	            if (userType==Attributes.ADMIN) {
 	            	 // TODO AdminWindow(); 
+	            	
+	            	System.out.println("progress");
 	            } 
 	            else if (userType==Attributes.CLIENT) {
 	            	// TODO ClientWindow();
+
+	            	  ClientMainPage Clientsample = new ClientMainPage();
+	          		
+	          		
+	          		//ClientMainPage b = new ClientMainPage();
+	          		
+	          		
+	          		String[] val =Clientsample.start(_all_vehicles);
 	            } 
 	            else if (userType==Attributes.WORKER) {
 	            	 // TODO WorkerWindow();
@@ -94,7 +109,7 @@ public class Main {
 	        }
 	    }
 	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
-		
+	  ;
 		
 		
 		//LeasingPatio my_patio = new LeasingPatio();
