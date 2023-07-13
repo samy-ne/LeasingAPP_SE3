@@ -14,7 +14,7 @@ public class OptionPaneExample extends WindowAdapter{
  
 	JFrame f;
 	//f.setBounds(100, 100, 450, 300);
-	Object[] options = { "< Previous >", "< Buy >", "< Next >"};
+	Object[] options = { "< Previous >", "< Get Vehicle >", "< Next >"};
 	String[] ImageArray= { "car1.png","car2.png","car3.png"};
 
 	
@@ -39,7 +39,7 @@ public class OptionPaneExample extends WindowAdapter{
 	    if (buyOrRent==0) {
 	    	if (vehicle.get_buying_price()==0) {
 	    	a =JOptionPane.showOptionDialog(f, vehicle.get_brand()+  "\n "+ vehicle.get_color()
-			+  "\n "+vehicle.get_model()+"\n"+"Not for buying, but match other prefrences" +"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
+			+  "\n "+vehicle.get_model()+"\n"+"Not for buying, but match other prefrences" +"\n"+"Renting Price: " + vehicle.get_renting_price()+"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
 					JOptionPane.QUESTION_MESSAGE,carImage1,
 					options, options[0]);
 	    	}else {
@@ -52,7 +52,7 @@ public class OptionPaneExample extends WindowAdapter{
 	    }else {
 	    	if (vehicle.get_renting_price()==0) {
 		    	a =JOptionPane.showOptionDialog(f, vehicle.get_brand()+  "\n "+ vehicle.get_color()
-				+  "\n "+vehicle.get_model()+"\n"+"Not for renting, but match other prefrences" +"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
+				+  "\n "+vehicle.get_model()+"\n"+"Not for renting, but match other prefrences" +"\n"+"Buying Price: " + vehicle.get_buying_price()+"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
 						JOptionPane.QUESTION_MESSAGE,carImage1,
 						options, options[0]);
 	    	}else {
