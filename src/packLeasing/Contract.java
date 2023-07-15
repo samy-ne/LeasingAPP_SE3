@@ -17,6 +17,14 @@ public class Contract {
 		this._vehicle = _vehicle;
 	}
 
+		public Contract (Vehicles _vehicle) {
+		//this method is a constructor for a contract of a year with start day= today  ;)
+		super();
+		this._start = LocalDate.now();
+		this._finish = LocalDate.now().plusYears(1);;
+		this._vehicle = _vehicle;
+	}
+
 	
 	// override
 	@Override

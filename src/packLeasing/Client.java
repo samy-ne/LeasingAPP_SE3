@@ -2,6 +2,19 @@ package packLeasing;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+
+import javax.swing.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.awt.Font;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 
 public class Client extends Person {	
 	// members
@@ -84,6 +97,26 @@ public class Client extends Person {
 		}
 		return _matching_vehicles;
 		  
+	}
+
+	public void rentVehycleForYear(Vehicles v)
+	{
+		Contract new_contract = new Contract(v);
+		this._my_contracts.add(new_contract);
+		v.set_available(false);
+	}
+	
+	public void buyVehycle(Vehicles v)
+	{
+		v.set_available(false);
+	}
+	
+	public void printRentedVehycles()
+	{
+		for (Iterator iterator = _my_contracts.iterator(); iterator.hasNext();) {
+			Contract contract = (Contract) iterator.next();
+			System.out.println((Vehicles) contract._vehicle);
+		}
 	}
 	
 }
