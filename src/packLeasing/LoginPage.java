@@ -121,6 +121,8 @@ public class LoginPage implements ActionListener {
     	    				0, "backToTheFutureCar.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
     	    		Cars vehicle7 =  new Cars("Black", 4500, 100000, "DC comics", "Batmobile",
     	    				0, "batmobile.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    	    		Cars vehicle8 =  new Cars("Off-White", 2500, 60000, "The Walt Disney Company", "Indiana Jones Car Model",
+    	    				0, "IndianaJonesCar.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
     	    		System.out.println(vehicle4.get_id());
     	    		System.out.println(vehicle5.get_id());
     	    		ArrayList<Vehicles> _all_vehicles = new ArrayList<Vehicles> ();
@@ -131,6 +133,7 @@ public class LoginPage implements ActionListener {
     	    		_all_vehicles.add(vehicle5);
     	    		_all_vehicles.add(vehicle6);
     	    		_all_vehicles.add(vehicle7);
+    	    		_all_vehicles.add(vehicle8);
     	    		//Client Clientsample = new Client(my_patio.get_all_vehicles());
     	    		ClientMainPage Clientsample = new ClientMainPage();
     	    		//ClientMainPage b = new ClientMainPage();
