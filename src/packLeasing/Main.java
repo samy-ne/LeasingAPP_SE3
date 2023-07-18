@@ -24,7 +24,7 @@ public class Main {
 		LoginPage loginpage = new LoginPage(1);
 		
 		//ListOfClientsPage hi = new ListOfClientsPage();
-		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
+		/*Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaGR86Resized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle2 =  new Cars("Gray", 2000, 50000, "Tesla", "2023 Model S",
 				0, "TeslaModelSGrayResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
@@ -124,7 +124,7 @@ public class Main {
 		//_all_vehicles.add(vehicle1);
 		//_all_vehicles.add(vehicle2);
 		//_all_vehicles.add(vehicle3);
-		main_Client(_all_vehicles);
+		main_Client(_all_vehicles);*/
 	}
 	
 	public static void main_Admin() {

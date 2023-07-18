@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 public class OptionPaneExample extends WindowAdapter{  
 
  
-	JFrame f;
+	//JFrame f;
 	//f.setBounds(100, 100, 450, 300);
 	Object[] options = { "< Previous >", "< Get Vehicle >", "< Next >"};
 	String[] ImageArray= { "car1.png","car2.png","car3.png"};
@@ -20,7 +20,8 @@ public class OptionPaneExample extends WindowAdapter{
 	
 	
 	OptionPaneExample(int num,int buyOrRent, ArrayList<Vehicles> _matching_vehicles){  
-		Vehicles vehicle=_matching_vehicles.get(num);
+		JFrame f = null;
+		try{Vehicles vehicle=_matching_vehicles.get(num);
 		Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 		//JLabel BrandLabel = new JLabel(vehicle.get_brand());
 		//BrandLabel.setFont (new java.awt.Font("Arial", java.awt.Font.BOLD, 22));
@@ -90,11 +91,15 @@ public class OptionPaneExample extends WindowAdapter{
 			num = num +1;
 			OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles);
 			}  
-		}  
-	 
+		
+	}
+	catch(IndexOutOfBoundsException e) 
+	{
+		System.out.println(e);
+	}
 	  
 	
 	
 	    
 	}
-
+}

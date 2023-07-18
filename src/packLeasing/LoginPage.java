@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.*;
@@ -106,7 +107,28 @@ public class LoginPage implements ActionListener {
     	    	else if (userType==Attributes.CLIENT) {
     	    		// TODO show ClientWindow();
     	    		f.dispose();
-    	    		ClientMainPage clientMainPage = new ClientMainPage();
+    	    		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
+    	    				0, "ToyotaGR86Resized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    	    		Cars vehicle2 =  new Cars("Gray", 2000, 50000, "Tesla", "2023 Model S",
+    	    				0, "TeslaModelSGrayResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    	    		Cars vehicle3 =  new Cars("White", 3000, 70000, "Tesla", "2023 Model Y",
+    	    				0, "TeslaModelYWhiteResized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    	    		Cars vehicle4 =  new Cars("White", 1000, 75000, "Hyundai", "SONATA",
+    	    				0, "png-clipart-2015-hyundai-accent-car-2013-hyundai-sonata-2013-hyundai-accent-hyundai-compact-car-sedan.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    	    		Cars vehicle5 =  new Cars("White", 1500, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
+    	    				0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    	    		System.out.println(vehicle4.get_id());
+    	    		System.out.println(vehicle5.get_id());
+    	    		ArrayList<Vehicles> _all_vehicles = new ArrayList<Vehicles> ();
+    	    		_all_vehicles.add(vehicle1);
+    	    		_all_vehicles.add(vehicle2);
+    	    		_all_vehicles.add(vehicle3);
+    	    		_all_vehicles.add(vehicle4);
+    	    		_all_vehicles.add(vehicle5);
+    	    		//Client Clientsample = new Client(my_patio.get_all_vehicles());
+    	    		ClientMainPage Clientsample = new ClientMainPage();
+    	    		//ClientMainPage b = new ClientMainPage();
+    	    		String[] val =Clientsample.start(_all_vehicles);
     	    		} 
     	    	
     	    	else if (userType==Attributes.WORKER) {
