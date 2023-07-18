@@ -59,21 +59,26 @@ public class SignUpPage implements ActionListener {
         f.add(imageLabel);
 		
         
+        
         signUp.addActionListener(e -> {
-            char[] password = passwordField.getPassword();
-            String username = t1.getText();
+        	
+        	if (e.getSource() == signUp) {
+        		char[] password = passwordField.getPassword();
+        		String username = t1.getText();
             
             //logic that uses user name and passwords that the client entered to signUp and saves them. 
-            Login login = new Login();
-            login.addUser(username, password, 2); //this add new client
+        		Login login = new Login();
+        		login.addUser(username, password, 2); //this add new client
     	    
             //System.out.println(username);
             //System.out.println(password);
 
-            f.dispose();
-            ClientMainPage clientMainPage = new ClientMainPage();		//if its client - lunch client main system.
+        		//f.dispose();
+        		ClientMainPage openClientPage = new ClientMainPage();
+        		String[] val =openClientPage.start(Main.my_patio._all_vehicles);
+        		
 
-            
+        	}    
         });
         
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,6 +94,7 @@ public class SignUpPage implements ActionListener {
 	//	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		}
 		
 	
