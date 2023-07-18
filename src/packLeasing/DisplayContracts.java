@@ -9,7 +9,7 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-public class OptionPaneExample extends WindowAdapter{  
+public class DisplayContracts extends WindowAdapter{  
 
  
 	//JFrame f;
@@ -20,11 +20,13 @@ public class OptionPaneExample extends WindowAdapter{
 
 	
 	
-	OptionPaneExample(int num,int buyOrRent, ArrayList<Vehicles> _matching_vehicles, Client _client){  
+	DisplayContracts(int num,int buyOrRent, ArrayList<Contract> _contracts){  
 		JFrame f = null;
-		Contract contractvar = null;
-		try{Vehicles vehicle=_matching_vehicles.get(num);
-		Client client=_client;
+		
+		//Contract contractvar = null;
+		try{
+			Contract contract =_contracts.get(num);
+			Vehicles vehicle=contract.get_vehicle();
 		Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 		//JLabel BrandLabel = new JLabel(vehicle.get_brand());
 		//BrandLabel.setFont (new java.awt.Font("Arial", java.awt.Font.BOLD, 22));
@@ -80,7 +82,7 @@ public class OptionPaneExample extends WindowAdapter{
 		//f.add(string1);
 		if(a==JOptionPane.YES_OPTION){  
 			num = num -1;
-			new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);  
+			new DisplayContracts(num,buyOrRent,_contracts);  
 		}  
 		if(a==JOptionPane.NO_OPTION){  
 		      
@@ -88,24 +90,23 @@ public class OptionPaneExample extends WindowAdapter{
 			if(input==JOptionPane.YES_OPTION) {
 				if (buyOrRent==1) {
 					contractvar=new Contract(vehicle);
-					System.out.println(contractvar.toString());
-					client.addContact(contractvar);
 				}
 			    //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
-			//new OptionPaneExample(num,buyOrRent,_matching_vehicles);
+			//new DisplayContracts(num,buyOrRent,_contracts);
 		}
 		if(a==JOptionPane.CANCEL_OPTION){ 
 			num = num +1;
-			OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);
+			DisplayContracts jopt = new DisplayContracts(num,buyOrRent,_contracts);
 			}  
 		
-	}
-	catch(IndexOutOfBoundsException e) 
+	}catch(IndexOutOfBoundsException e) 
 	{
 		System.out.println(e);
-	}
-	  
+	}catch(NullPointerException e) {
+		System.out.println("Not avialable");
+		JOptionPane.showMessageDialog(null,"You don't have any cars yet.");  
+	}  
 	
 	
 	    

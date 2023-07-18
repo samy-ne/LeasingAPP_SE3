@@ -22,7 +22,7 @@ public class Client extends Person {
 	//String[] val =b.start();
 	ArrayList<Vehicles> _my_matching_vehicles ;
 	private ArrayList<Contract> _my_contracts;
-	
+	//this._my_contracts = new ArrayList<Contract>();
 	// constructors
 
 	public Client() {
@@ -81,7 +81,7 @@ public class Client extends Person {
 	// Advanced methods
 	public void displayVehiclesFromSearch(ArrayList<Vehicles> _matching_vehicles) {
 		int num = 0;
-	    new  OptionPaneExample(num,0, _matching_vehicles );  
+	    //new  OptionPaneExample(num,0, _matching_vehicles );  
 	}
 	public ArrayList<Vehicles> sortBuyingPriceHighToLow(ArrayList<Vehicles> _matching_vehicles) {
 		int n = _matching_vehicles.size();
@@ -105,7 +105,12 @@ public class Client extends Person {
 		this._my_contracts.add(new_contract);
 		v.set_available(false);
 	}
-	
+	public void addContact(Contract c)
+	{
+		this._my_contracts = new ArrayList<Contract>();
+		this._my_contracts.add(c);
+		//v.set_available(false);
+	}
 	public void buyVehycle(Vehicles v)
 	{
 		v.set_available(false);

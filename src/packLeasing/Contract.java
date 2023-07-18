@@ -1,6 +1,7 @@
 package packLeasing;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Contract {
 	// members
@@ -31,9 +32,13 @@ public class Contract {
 	public String toString() {
 		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
 	}
-	
+	public String getVehicles() {
+		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
+	}
 	
 		
 	// getters & setters
-
+	public Vehicles get_vehicle(){
+		return _vehicle;
+	}
 }

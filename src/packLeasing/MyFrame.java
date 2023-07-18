@@ -15,8 +15,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class MyFrame extends JFrame implements ActionListener {
-
+	Contract returnContract= null;
 	int _buyOrRent;
+	Client _client;
 	String[] _options = new String[4];
 	ArrayList <Vehicles> _vehicles =new ArrayList<Vehicles>();;
 	    JFrame f = new JFrame("Client Search Page"); // set a topic
@@ -144,7 +145,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	    //	return _options;
 	    //}
 	    
-	    public void start(ArrayList<Vehicles> vehicles,int buyOrRent) {
+	    public Contract start(ArrayList<Vehicles> vehicles,int buyOrRent) {
 	    	//Cars //vehicletrial =  new Cars("White", 0, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
 					//0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 	    	//this._vehicles.add(vehicletrial);
@@ -153,6 +154,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	    	this._buyOrRent=buyOrRent;
 	    	//this._vehicles=vehicles;
 	    	f.setVisible(true);
+			return returnContract;
 	    }
 	    public String[] get_Search_Options() {
 	    	return _options;
@@ -160,7 +162,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	    public ArrayList<Vehicles> get_vehicles() {
 	    	return _vehicles;
 	    }
-	    public ArrayList<Vehicles> searchOptionManagment(String[] val) {
+	    public Contract searchOptionManagment(String[] val) {
 	    	System.out.println("check1");
 	    	System.out.println(val[0]);
 			if (val[0]=="Sort by price from lowest to highest") {
@@ -173,8 +175,10 @@ public class MyFrame extends JFrame implements ActionListener {
 				}
 				System.out.println("check done");
 				//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
-				 new  OptionPaneExample(0,_buyOrRent, _vehicles);
+				OptionPaneExample ope=new  OptionPaneExample(0,_buyOrRent, _vehicles,_client);
+				 returnContract=ope.getchosen();
 				System.out.println("check2");
+				//return returnContract;
 				//_vehicles=_vehicles_original;
 			}else {
 				//sortBuyingPriceHighToLowMyFrame(_vehicles);
@@ -187,8 +191,10 @@ public class MyFrame extends JFrame implements ActionListener {
 				//sortColor( vehicleARR,val[1]);
 				sortType(sortBrand(sortColor( vehicleARR,val[1]),val[2]),val[3]);
 				//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
-				new  OptionPaneExample(0,_buyOrRent, _vehicles);
+				OptionPaneExample ope= new  OptionPaneExample(0,_buyOrRent, _vehicles,_client);
+				returnContract=ope.getchosen();
 				System.out.println("check3");
+				//return returnContract;
 				//_vehicles=_vehicles_original;
 			}
 			f.dispose();
@@ -365,5 +371,23 @@ public class MyFrame extends JFrame implements ActionListener {
 	    
 			return matching_colors;
 	    }
+
+		public Contract getContract() {
+			// TODO Auto-generated method stub
+			return returnContract;
+		}
+
+		public Contract start(ArrayList<Vehicles> vehicles,int buyOrRent, Client client) {
+	    	//Cars //vehicletrial =  new Cars("White", 0, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
+					//0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+	    	//this._vehicles.add(vehicletrial);
+	    	//this._vehicles.add(vehicletrial);
+	    	this._vehicles.addAll(vehicles);
+	    	this._buyOrRent=buyOrRent;
+	    	this._client=client;
+	    	//this._vehicles=vehicles;
+	    	f.setVisible(true);
+			return returnContract;
+		}
 	    
 }
