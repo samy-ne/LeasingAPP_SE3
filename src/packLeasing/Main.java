@@ -18,10 +18,11 @@ public class Main {
 		//api.returnUserPasswordMap().toString();
 		//api.insertNewUser("kaka", "123123");
 		
-		
 		LeasingPatio my_patio = new LeasingPatio();
 		//ArrayList<Vehicles> vehicles= my_patio.get_all_vehicles();
-		//LoginPage loginpage = new LoginPage(1);
+		
+		LoginPage loginpage = new LoginPage(1);
+		
 		//ListOfClientsPage hi = new ListOfClientsPage();
 		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaGR86Resized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
@@ -33,8 +34,8 @@ public class Main {
 				0, "png-clipart-2015-hyundai-accent-car-2013-hyundai-sonata-2013-hyundai-accent-hyundai-compact-car-sedan.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle5 =  new Cars("White", 1500, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
 				0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
-		System.out.println(vehicle4.get_id());
-		System.out.println(vehicle5.get_id());
+		//System.out.println(vehicle4.get_id());
+		//System.out.println(vehicle5.get_id());
 		ArrayList<Vehicles> _all_vehicles = new ArrayList<Vehicles> ();
 		_all_vehicles.add(vehicle1);
 		_all_vehicles.add(vehicle2);
@@ -66,50 +67,48 @@ public class Main {
 		//static final Integer Admin = 1;
 		//static final Integer Client = 2;
 		//static final Integer Worker = 3;
-	    Login login = new Login();
-	    boolean authenticated = false;
-	    Scanner scanner = new Scanner(System.in);
-	    
-	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
-	    fileAPI api = new fileAPI();
-	    
-	    while (!authenticated) {
-	        // Get username and password from the user
-	        System.out.print("Enter username: ");
-	        String username = scanner.nextLine();
-	        System.out.print("Enter password: ");
-	        String password = scanner.nextLine();
-
-	        authenticated = login.verifyPassword(username, password);
-
-	        if (authenticated) {
-	            int userType = login.getUserType(username);
-
-	            if (userType==Attributes.ADMIN) {
-	            	 // TODO AdminWindow(); 
-	            	
-	            	System.out.println("progress");
-	            } 
-	            else if (userType==Attributes.CLIENT) {
-	            	// TODO ClientWindow();
-
-	            	  ClientMainPage Clientsample = new ClientMainPage();
-	          		
-	          		
-	          		//ClientMainPage b = new ClientMainPage();
-	          		
-	          		
-	          		String[] val =Clientsample.start(_all_vehicles);
-	            } 
-	            else if (userType==Attributes.WORKER) {
-	            	 // TODO WorkerWindow();
-	            }
-	        } else {
-	        	// TODO window of "Wrong username or password. Please try again.");
-	        }
-	    }
-	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
-	  ;
+//	    Login login = new Login();
+//	    boolean authenticated = false;
+//	    Scanner scanner = new Scanner(System.in);
+//	    
+//	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
+//	    login.printUserAndPass();
+//	    
+//	    fileAPI api = new fileAPI();
+//	    
+//	    while (!authenticated) {
+//	        // Get username and password from the user
+//	        System.out.print("Enter username: ");
+//	        String username = scanner.nextLine();
+//	        System.out.print("Enter password: ");
+//	        String password = scanner.nextLine();
+//	        authenticated = login.verifyPassword(username, password);
+//
+//	        if (authenticated) {
+//	            int userType = login.getUserType(username);
+//
+//	            if (userType==Attributes.ADMIN) {
+//	            	 // TODO AdminWindow(); 	  
+//	            	System.out.println("progress");
+//	            } 
+//	            else if (userType==Attributes.CLIENT) {
+//	            	// TODO ClientWindow();
+//
+//	            	  ClientMainPage Clientsample = new ClientMainPage();
+//	          		          		
+//	          		//ClientMainPage b = new ClientMainPage();	          		
+//	          		
+//	          		String[] val =Clientsample.start(_all_vehicles);
+//	            } 
+//	            else if (userType==Attributes.WORKER) {
+//	            	 // TODO WorkerWindow();
+//	            }
+//	        } else {
+//	        	// TODO window of "Wrong username or password. Please try again.");
+//	        }
+//	    }
+//	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+//	  ;
 		
 		
 		//LeasingPatio my_patio = new LeasingPatio();

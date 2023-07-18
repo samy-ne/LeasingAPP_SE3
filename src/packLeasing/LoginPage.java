@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 import javax.swing.*;
 
@@ -71,6 +72,12 @@ public class LoginPage implements ActionListener {
 		
         
         signIn.addActionListener(e -> {
+        	
+    	    Login login = new Login();
+    	    boolean authenticated = false;
+    	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
+    	    login.printUserAndPass(); //help to see what users allow to go in the system and thier types
+        	
         	char[] passwordChar = passwordField.getPassword();
         	String password = new String(passwordChar);
             String username = t1.getText();
@@ -82,12 +89,9 @@ public class LoginPage implements ActionListener {
     		//static final Integer Admin = 1;
     		//static final Integer Client = 2;
     		//static final Integer Worker = 3;
-    	    Login login = new Login();
-    	    boolean authenticated = false;
-    	    login.readUserAndPasswordsFromFile("usernames_passwords.txt");
-    	    
 
-           
+
+
     	    // TODO if someone press sign in show window of sign in
     		// $$$$$$$$$ sign in start $$$$$$$$$             
     	    authenticated = login.verifyPassword(username, password);//check if password+user OK(?!)
@@ -98,11 +102,13 @@ public class LoginPage implements ActionListener {
     	    		f.dispose();
     	    		AdminMainPage adminMainPage = new AdminMainPage();
     	    		} 
+    	    	
     	    	else if (userType==Attributes.CLIENT) {
     	    		// TODO show ClientWindow();
     	    		f.dispose();
     	    		ClientMainPage clientMainPage = new ClientMainPage();
     	    		} 
+    	    	
     	    	else if (userType==Attributes.WORKER) {
     	    		// TODO show WorkerWindow();
     	    		f.dispose();

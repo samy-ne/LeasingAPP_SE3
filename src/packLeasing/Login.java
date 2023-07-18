@@ -16,11 +16,17 @@ public class Login {
         userAndPass = new HashMap<>();
     }
 
+    
     // Add usernames, passwords, and user types to the map
     public void addUser(String username, char[] password, int userType) {
         userAndPass.put(username, new UserInfo(username, password, userType));
+        printUserAndPass(); 
+        // TODO 
+        // insert the username password userType into the file ...
     }
 
+    
+    
     public boolean verifyPassword(String username, String password) {
     	
     	
@@ -47,6 +53,19 @@ public class Login {
         }
     }
 
+    
+    public void printUserAndPass() {
+       	System.out.println("Admin = 1,Client = 2,Worker = 3");
+        for (Map.Entry<String, UserInfo> entry : userAndPass.entrySet()) {
+            String username = entry.getKey();
+            UserInfo userInfo = entry.getValue();
+            char[] password = userInfo.getPassword();
+            int userType = userInfo.getUserType();
+            System.out.println("Username:" + username +" Password:" + new String(password)+ " UserType:" + userType);
+        }
+    }
+    
+    
     public void readUserAndPasswordsFromFile(String fileName) {
         // Implement reading user information from the file
     	////Admin = 1;
@@ -80,7 +99,7 @@ public class Login {
             userAndPass.put(username, new UserInfo(username, password.toCharArray(), Attributes.WORKER));
         }
     	
-    	System.out.println(userAndPass);
+    	//System.out.println(userAndPass);
     	
     	
     }
