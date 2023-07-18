@@ -116,7 +116,7 @@ public class ClientMainPage implements ActionListener {
 		
 	}
     public String[] start( ArrayList<Vehicles> vehicles) {
-    	this._vehicles=(vehicles);
+    	this._vehicles=(Main.my_patio._all_vehicles);
     	//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
     	f.setVisible(true);
     	return returnVal;

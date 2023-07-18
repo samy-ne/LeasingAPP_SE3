@@ -25,7 +25,7 @@ public class Cars extends Vehicles {
 
 	@Override
 	public String toString() {
-		return "Cars"; 
+		return "Car\n" + super.toString(); 
 	}
 
 
