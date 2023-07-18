@@ -44,9 +44,9 @@ public abstract class Vehicles {
 	// override
 	@Override
 	public String toString() {
-		return "Vehicles [_color=" + _color + ", _renting_price=" + _renting_price + ", _buying_price=" + _buying_price
-				+ ", _brand=" + _brand + ", _model=" + _model + ", _age=" + _age + ", _id=" + _id + ", _image_path="
-				+ _image_path + ", _available=" + _available + "]";
+		return "color=" + _color + "\nrenting_price=" + _renting_price + "\nbuying_price=" + _buying_price
+				+ "\nbrand=" + _brand + "\nmodel=" + _model + "\nage=" + _age + "\nid=" + _id + "\nimage_path="
+				+ "\navailable=" + _available;
 		
 		// TODO
 	}
