@@ -83,6 +83,7 @@ public class LoginPage implements ActionListener {
             // Perform login logic with the username and password
             System.out.println(username);
             System.out.println(password);
+            System.out.println(password);
     		// login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~               
     		//static final Integer NoSuchUser = 0 ;
     		//static final Integer Admin = 1;
