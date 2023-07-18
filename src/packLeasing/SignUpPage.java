@@ -73,7 +73,7 @@ public class SignUpPage implements ActionListener {
             //System.out.println(username);
             //System.out.println(password);
 
-        		//f.dispose();
+        		f.dispose();
         		ClientMainPage openClientPage = new ClientMainPage();
         		String[] val =openClientPage.start(Main.my_patio._all_vehicles);
         		
