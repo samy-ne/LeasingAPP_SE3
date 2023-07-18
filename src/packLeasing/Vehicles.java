@@ -44,9 +44,9 @@ public abstract class Vehicles {
 	// override
 	@Override
 	public String toString() {
-		return "Vehicles [_color=" + _color + ", _renting_price=" + _renting_price + ", _buying_price=" + _buying_price
-				+ ", _brand=" + _brand + ", _model=" + _model + ", _age=" + _age + ", _id=" + _id + ", _image_path="
-				+ _image_path + ", _available=" + _available + "]";
+		return "color=" + _color + "\nrenting_price=" + _renting_price + "\nbuying_price=" + _buying_price
+				+ "\nbrand=" + _brand + "\nmodel=" + _model + "\nage=" + _age + "\nid=" + _id + "\nimage_path="
+				+ "\navailable=" + _available;
 		
 		// TODO
 	}
@@ -95,7 +95,12 @@ public abstract class Vehicles {
 	public void set_age(Integer _age) {
 		this._age = _age;
 	}
-
+	public Integer get_id() {
+		return _id;
+	}
+	public void set_id(Integer _id) {
+		this._id = _id;
+	}
 	public String get_image_path() {
 		return _image_path;
 	}

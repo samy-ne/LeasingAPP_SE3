@@ -3,6 +3,7 @@ package packLeasing;
 import java.util.ArrayList;
 
 public class LeasingPatio {
+	Attributes Attributes = null;
 	// members
 	ArrayList<Vehicles> _all_vehicles;
 	ArrayList<Client> _all_clients;
@@ -24,7 +25,9 @@ public class LeasingPatio {
 	}
 	
 		// override
-		
+	public ArrayList<Vehicles> get_all_vehicles() {
+		return _all_vehicles;
+	}
 		// getters & setters
 
 }

@@ -1,6 +1,7 @@
 package packLeasing;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Contract {
 	// members
@@ -17,15 +18,29 @@ public class Contract {
 		this._vehicle = _vehicle;
 	}
 
+		public Contract (Vehicles _vehicle) {
+		//this method is a constructor for a contract of a year with start day= today  ;)
+		super();
+		this._start = LocalDate.now();
+		this._finish = LocalDate.now().plusYears(1);;
+		this._vehicle = _vehicle;
+	}
+
 	
 	// override
 	@Override
 	public String toString() {
 		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
 	}
-	
-	
+	public String getVehicles() {
+		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
+	}
+	public String getDate() {
+		return "Your contract starts on: " + _start +"\n"+ "The contract starts on: " + _finish;
+	}
 		
 	// getters & setters
-
+	public Vehicles get_vehicle(){
+		return _vehicle;
+	}
 }

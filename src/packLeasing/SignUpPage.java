@@ -59,37 +59,45 @@ public class SignUpPage implements ActionListener {
         f.add(imageLabel);
 		
         
+        
         signUp.addActionListener(e -> {
-            char[] password = passwordField.getPassword();
-            String username = t1.getText();
-            // Perform login logic with the username and password
-            // ...
-            //************ add an "if" to check if login was good !!!!!! : 
-            f.dispose();
-            ClientMainPage clientMainPage = new ClientMainPage();		//if its client - lunch client main system.
-            //AdminMainPage adminMainPage = new AdminMainPage();		//if its admin - lunch admin main system. 
-            //WorkerMainPage workerMainPage = new WorkerMainPage();		//if its worker - lunch worker main system. 
-            //LoginPage login = new LoginPage(0);	//if the login was wrong - run this! 
+        	
+        	if (e.getSource() == signUp) {
+        		char[] password = passwordField.getPassword();
+        		String username = t1.getText();
             
+            //logic that uses user name and passwords that the client entered to signUp and saves them. 
+        		Login login = new Login();
+        		login.addUser(username, password, 2); //this add new client
+    	    
+            //System.out.println(username);
+            //System.out.println(password);
+
+        		f.dispose();
+        		ClientMainPage openClientPage = new ClientMainPage();
+        		String[] val =openClientPage.start(Main.my_patio._all_vehicles);
+        		
+
+        	}    
         });
         
-        //f.add(signIn);
-
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
 		f.setVisible(true);		//must set as true to see the window
 
 	}
 
+	//@Override
+	//public void actionPerformed(ActionEvent e) {
+	//	if (e.getSource() == signUp) {
+	//		LoginPage login = new LoginPage(1);
+	//	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == signUp) {
-			LoginPage login = new LoginPage(1);
+		
 		}
 		
-	}
-
-
+	
 	
 }
 	

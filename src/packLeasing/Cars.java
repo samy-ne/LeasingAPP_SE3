@@ -5,6 +5,7 @@ public class Cars extends Vehicles {
 	private Integer _motor;
 	private Integer _gears;
 	private Integer _roof;
+	private String _type;
 	
 	
 	// constructor
@@ -24,7 +25,7 @@ public class Cars extends Vehicles {
 
 	@Override
 	public String toString() {
-		return "Car []"; //TODO - should print the img
+		return "Car\n" + super.toString(); 
 	}
 
 

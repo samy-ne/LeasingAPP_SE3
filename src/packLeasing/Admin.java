@@ -14,6 +14,17 @@ public class Admin extends Person{
 	// getters & setters
 	
 	
+	public void addVehycle(LeasingPatio Lp, Vehicles v1)
+	{
+		Lp._all_vehicles.add(v1);
+	}
+	
+	public void removeVehycle(LeasingPatio Lp, Vehicles v1)
+	{
+		Lp._all_vehicles.remove(v1);
+	}
+	
+	
 	
 	
 	
