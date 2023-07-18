@@ -58,7 +58,6 @@ public class Main {
 		
 		
 		LoginPage loginpage = new LoginPage(1);
-		
 		//ListOfClientsPage hi = new ListOfClientsPage();
 		/*Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaGR86Resized.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
