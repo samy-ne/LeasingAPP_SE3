@@ -49,7 +49,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
         int panelHeight = 600;
 
         carsButton.setFont(new Font("Arial", Font.BOLD, 20));
-        carsButton.setBounds(5, 5, 190, 550);
+        carsButton.setBounds(5, 5, 250, 550);
         carsButton.addActionListener(this);
         panel.add(carsButton);
 
@@ -59,12 +59,12 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 //        panel.add(clientsButton);
 
         sellButton.setFont(new Font("Arial", Font.BOLD, 20));
-        sellButton.setBounds(395,5,190,550);
+        sellButton.setBounds(267,5,250,550);
         sellButton.addActionListener(this);
         panel.add(sellButton);
         
         buyButton.setFont(new Font("Arial", Font.BOLD, 20));
-        buyButton.setBounds(590,5,190,550);
+        buyButton.setBounds(530,5,250,550);
         buyButton.addActionListener(this);
         panel.add(buyButton);
 
