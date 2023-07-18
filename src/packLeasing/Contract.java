@@ -35,7 +35,9 @@ public class Contract {
 	public String getVehicles() {
 		return "Contract [start=" + _start + ", finish=" + _finish + ", vehicle=" + _vehicle + "] /n";
 	}
-	
+	public String getDate() {
+		return "Your contract starts on: " + _start +"\n"+ "The contract starts on: " + _finish;
+	}
 		
 	// getters & setters
 	public Vehicles get_vehicle(){

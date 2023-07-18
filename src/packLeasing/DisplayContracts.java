@@ -14,7 +14,7 @@ public class DisplayContracts extends WindowAdapter{
  
 	//JFrame f;
 	//f.setBounds(100, 100, 450, 300);
-	Object[] options = { "< Previous >", "< Get Vehicle >", "< Next >"};
+	Object[] options = { "< Previous >", "< View contract's detail >", "< Next >"};
 	String[] ImageArray= { "car1.png","car2.png","car3.png"};
 	public Contract contractvar;
 
@@ -86,13 +86,7 @@ public class DisplayContracts extends WindowAdapter{
 		}  
 		if(a==JOptionPane.NO_OPTION){  
 		      
-			int input = JOptionPane.showConfirmDialog(null, "Are you sure you want to get this product?");
-			if(input==JOptionPane.YES_OPTION) {
-				if (buyOrRent==1) {
-					contractvar=new Contract(vehicle);
-				}
-			    //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			}
+			 JOptionPane.showMessageDialog(null,contract.getDate());     
 			//new DisplayContracts(num,buyOrRent,_contracts);
 		}
 		if(a==JOptionPane.CANCEL_OPTION){ 

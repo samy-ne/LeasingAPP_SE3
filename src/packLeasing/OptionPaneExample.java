@@ -42,28 +42,66 @@ public class OptionPaneExample extends WindowAdapter{
 	    int a;
 	    if (buyOrRent==0) {
 	    	if (vehicle.get_buying_price()==0) {
-	    	a =JOptionPane.showOptionDialog(f, vehicle.get_brand()+  "\n "+ vehicle.get_color()
-			+  "\n "+vehicle.get_model()+"\n"+"Not for buying, but match other prefrences" +"\n"+"Renting Price: " + vehicle.get_renting_price()+"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
-					JOptionPane.QUESTION_MESSAGE,carImage1,
-					options, options[0]);
+	    		num = num +1;
+				OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);
 	    	}else {
 	    		a =JOptionPane.showOptionDialog(f, vehicle.get_brand()+  "\n "+ vehicle.get_color()
 				+  "\n "+vehicle.get_model()+"\n"+"Buying Price: " + vehicle.get_buying_price()+"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
 						JOptionPane.QUESTION_MESSAGE,carImage1,
 						options, options[0]);
+	    		if(a==JOptionPane.YES_OPTION){  
+	    			num = num -1;
+	    			new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);  
+	    		}  
+	    		if(a==JOptionPane.NO_OPTION){  
+	    		      
+	    			int input = JOptionPane.showConfirmDialog(null, "Are you sure you want to get this product?");
+	    			if(input==JOptionPane.YES_OPTION) {
+	    				if (buyOrRent==1) {
+	    					contractvar=new Contract(vehicle);
+	    					System.out.println(contractvar.toString());
+	    					client.addContact(contractvar);
+	    				}
+	    			    //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    			}
+	    			//new OptionPaneExample(num,buyOrRent,_matching_vehicles);
+	    		}
+	    		if(a==JOptionPane.CANCEL_OPTION){ 
+	    			num = num +1;
+	    			OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);
+	    			}  
 	    	}
 	    	
 	    }else {
 	    	if (vehicle.get_renting_price()==0) {
-		    	a =JOptionPane.showOptionDialog(f, vehicle.get_brand()+  "\n "+ vehicle.get_color()
-				+  "\n "+vehicle.get_model()+"\n"+"Not for renting, but match other prefrences" +"\n"+"Buying Price: " + vehicle.get_buying_price()+"\n"+"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
-						JOptionPane.QUESTION_MESSAGE,carImage1,
-						options, options[0]);
+	    		num = num +1;
+				OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);
 	    	}else {
 			a =JOptionPane.showOptionDialog(f, vehicle.get_brand()+  "\n "+ vehicle.get_color()
 			+  "\n "+vehicle.get_model()+"\n"+"Rent Price: " + vehicle.get_renting_price()+"\n" +"Age: "+vehicle.get_age(), "Search Results",JOptionPane.DEFAULT_OPTION, 
 					JOptionPane.QUESTION_MESSAGE,carImage1,
 					options, options[0]);
+			if(a==JOptionPane.YES_OPTION){  
+				num = num -1;
+				new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);  
+			}  
+			if(a==JOptionPane.NO_OPTION){  
+			      
+				int input = JOptionPane.showConfirmDialog(null, "Are you sure you want to get this product?");
+				if(input==JOptionPane.YES_OPTION) {
+					if (buyOrRent==1) {
+						contractvar=new Contract(vehicle);
+						System.out.println(contractvar.toString());
+						client.addContact(contractvar);
+					}
+				    //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				}
+				//new OptionPaneExample(num,buyOrRent,_matching_vehicles);
+			}
+			if(a==JOptionPane.CANCEL_OPTION){ 
+				num = num +1;
+				OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);
+				}  
 	    	}
 	    }
 
@@ -78,27 +116,7 @@ public class OptionPaneExample extends WindowAdapter{
 		
 		//string1.setFont (new Font("Arial", Font.BOLD, 40));
 		//f.add(string1);
-		if(a==JOptionPane.YES_OPTION){  
-			num = num -1;
-			new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);  
-		}  
-		if(a==JOptionPane.NO_OPTION){  
-		      
-			int input = JOptionPane.showConfirmDialog(null, "Are you sure you want to get this product?");
-			if(input==JOptionPane.YES_OPTION) {
-				if (buyOrRent==1) {
-					contractvar=new Contract(vehicle);
-					System.out.println(contractvar.toString());
-					client.addContact(contractvar);
-				}
-			    //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			}
-			//new OptionPaneExample(num,buyOrRent,_matching_vehicles);
-		}
-		if(a==JOptionPane.CANCEL_OPTION){ 
-			num = num +1;
-			OptionPaneExample jopt = new OptionPaneExample(num,buyOrRent,_matching_vehicles,_client);
-			}  
+
 		
 	}
 	catch(IndexOutOfBoundsException e) 
