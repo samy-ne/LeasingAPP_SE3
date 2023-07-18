@@ -97,10 +97,10 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 		}
 		if (e.getSource()==buyButton) {
 			f.dispose();
-			//ClientRentPage clientRentPage = new ClientRentPage
+			AddVehiclePage addCar = new AddVehiclePage();
 		}
 		
-		LoginPage l1 = new LoginPage(1);
+		//LoginPage l1 = new LoginPage(1);
 		
 	}
     
