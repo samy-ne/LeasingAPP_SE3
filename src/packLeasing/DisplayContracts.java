@@ -96,9 +96,10 @@ public class DisplayContracts extends WindowAdapter{
 		
 	}catch(IndexOutOfBoundsException e) 
 	{
+		JOptionPane.showMessageDialog(null,"Not available."); 
 		System.out.println(e);
 	}catch(NullPointerException e) {
-		System.out.println("Not avialable");
+		System.out.println("Not available");
 		JOptionPane.showMessageDialog(null,"You don't have any rented vehicles yet.");  
 	}  
 	
