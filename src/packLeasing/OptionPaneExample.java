@@ -121,6 +121,7 @@ public class OptionPaneExample extends WindowAdapter{
 	}
 	catch(IndexOutOfBoundsException e) 
 	{
+		JOptionPane.showMessageDialog(null,"Not available.");
 		System.out.println(e);
 	}
 	  
