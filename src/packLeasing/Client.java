@@ -21,12 +21,14 @@ public class Client extends Person {
 	//ClientMainPage b = new ClientMainPage();
 	//String[] val =b.start();
 	ArrayList<Vehicles> _my_matching_vehicles ;
-	private ArrayList<Contract> _my_contracts;
+	public ArrayList<Contract> _my_contracts;
+	//=new ArrayList<Contract>();
 	//this._my_contracts = new ArrayList<Contract>();
 	// constructors
-
+	//this._my_contracts = new ArrayList<Contract>();
 	public Client() {
-		this(null, null);
+		this._my_contracts = new ArrayList<Contract>();
+		//this(null, null);
 	}
 	public Client(ArrayList<Contract> _my_contracts,ArrayList<Vehicles> _all_vehicles ) {
 		super();
@@ -105,9 +107,10 @@ public class Client extends Person {
 		this._my_contracts.add(new_contract);
 		v.set_available(false);
 	}
+	
 	public void addContact(Contract c)
 	{
-		this._my_contracts = new ArrayList<Contract>();
+		//this._my_contracts = new ArrayList<Contract>();
 		this._my_contracts.add(c);
 		//v.set_available(false);
 	}
