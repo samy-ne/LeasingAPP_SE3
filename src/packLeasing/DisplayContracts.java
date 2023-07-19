@@ -99,7 +99,7 @@ public class DisplayContracts extends WindowAdapter{
 		System.out.println(e);
 	}catch(NullPointerException e) {
 		System.out.println("Not avialable");
-		JOptionPane.showMessageDialog(null,"You don't have any cars yet.");  
+		JOptionPane.showMessageDialog(null,"You don't have any rented vehicles yet.");  
 	}  
 	
 	

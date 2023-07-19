@@ -16,7 +16,7 @@ public class ClientMainPage implements ActionListener {
 	Client client = new Client();
     JFrame f = new JFrame("Client Page"); // set a topic
     // creates the buttons
-    JButton checkButton = new JButton("Check my cars");
+    JButton checkButton = new JButton("My rented vehicles");
     JButton rentButton = new JButton("Rent a car");
     JButton buyButton = new JButton("Buy a car");
     ArrayList <Vehicles> _vehicles;
