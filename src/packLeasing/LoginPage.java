@@ -111,7 +111,7 @@ public class LoginPage implements ActionListener {
     	    		f.dispose();
     	    		
     	    		//Client Clientsample = new Client(my_patio.get_all_vehicles());
-    	    		ClientMainPage Clientsample = new ClientMainPage();
+    	    		ClientMainPage Clientsample = new ClientMainPage(username,password);
     	    		//ClientMainPage b = new ClientMainPage();
     	    		String[] val =Clientsample.start(Main.my_patio._all_vehicles);
     	    		} 

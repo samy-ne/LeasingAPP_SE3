@@ -6,23 +6,35 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import fileAPI.fileAPI;
+
 //import fileAPI.fileAPI;
 
 public class Login {
 	Attributes Attributes = null;
     private Map<String, UserInfo> userAndPass;
-
+    private String currentUser;
     public Login() {
         userAndPass = new HashMap<>();
     }
-
+    public String getCurrentUser() {
+    	return this.currentUser;
+    }
     
     // Add usernames, passwords, and user types to the map
     public void addUser(String username, char[] password, int userType) {
-        userAndPass.put(username, new UserInfo(username, password, userType));
-        printUserAndPass(); 
+    	fileAPI api = new fileAPI();
+        //userAndPass.put(username, new UserInfo(username, password, userType));
+        //printUserAndPass(); 
         // TODO 
         // insert the username password userType into the file ...
+    	if(userType == 2) {//add client
+    		
+    		api.insertNewUser(username, String.valueOf(password));
+    	}
+    	if(userType == 3) {//add worker
+    		api.insertNewWorker(username, password.toString());
+    	}
     }
 
     
@@ -73,6 +85,7 @@ public class Login {
 		//Worker = 3;
     	// each line in the shape username:password:usertype
     	fileAPI api = new fileAPI();
+    	
     	Map<String, String> userPasswordmap = api.returnUserPasswordMap();
     	Map<String, String> BossPasswordmap = api.returnBossPasswordMap();
     	Map<String, String> WorkerPasswordmap = api.returnWorkerPasswordMap();

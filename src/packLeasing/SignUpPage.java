@@ -65,7 +65,7 @@ public class SignUpPage implements ActionListener {
         	if (e.getSource() == signUp) {
         		char[] password = passwordField.getPassword();
         		String username = t1.getText();
-            
+        		System.out.println(password);
             //logic that uses user name and passwords that the client entered to signUp and saves them. 
         		Login login = new Login();
         		login.addUser(username, password, 2); //this add new client
@@ -74,7 +74,7 @@ public class SignUpPage implements ActionListener {
             //System.out.println(password);
 
         		f.dispose();
-        		ClientMainPage openClientPage = new ClientMainPage();
+        		ClientMainPage openClientPage = new ClientMainPage(username,String.valueOf(password));
         		String[] val =openClientPage.start(Main.my_patio._all_vehicles);
         		
 
