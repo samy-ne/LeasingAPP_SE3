@@ -45,17 +45,17 @@ public class ClientMainPage implements ActionListener {
         int panelHeight = 600;
 
         checkButton.setFont(new Font("Arial", Font.BOLD, 20));
-        checkButton.setBounds(5, 5, 250, 550);
+        checkButton.setBounds(5, 5, 250, 50);
         checkButton.addActionListener(this);
         panel.add(checkButton);
 
         rentButton.setFont(new Font("Arial", Font.BOLD, 20));
-        rentButton.setBounds(267,5,250,550);
+        rentButton.setBounds(267,5,250,50);
         rentButton.addActionListener(this);
         panel.add(rentButton);
 
         buyButton.setFont(new Font("Arial", Font.BOLD, 20));
-        buyButton.setBounds(530,5,250,550);
+        buyButton.setBounds(530,5,250,50);
         buyButton.addActionListener(this);
         panel.add(buyButton);
 
