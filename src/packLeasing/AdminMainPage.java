@@ -21,7 +21,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     JButton carsButton = new JButton("View all cars");
 //    JButton clientsButton = new JButton("Client details");
     JButton sellButton = new JButton("View all contracts");
-    JButton buyButton = new JButton("Add a vehicles to list");
+    JButton buyButton = new JButton("Add a vehicle to list");
     Vehicles _new_vehicle;
 	Object[] options = { "< Quit >", "< Next >"};
 	Object[] options2 = { "< Quit >", "< Next >", "< Sell >"};
