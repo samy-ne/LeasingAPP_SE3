@@ -23,7 +23,7 @@ public class Main {
 		
 		//ArrayList<Vehicles> vehicles= my_patio.get_all_vehicles();
 		
-		
+		System.out.println("wwwwwwwwwwwww");
 
 		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaOrangeGR.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
