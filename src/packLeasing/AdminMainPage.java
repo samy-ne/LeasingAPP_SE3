@@ -21,8 +21,8 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     JButton carsButton = new JButton("Cars details");
 //    JButton clientsButton = new JButton("Client details");
     JButton sellButton = new JButton("Sell a car");
-    JButton buyButton = new JButton("Buy new cars");
-    
+    JButton buyButton = new JButton("Add a vehicles to list");
+    Vehicles _new_vehicle;
 	Object[] options = { "< Quit >", "< Next >"};
 	Object[] options2 = { "< Quit >", "< Next >", "< Sell >"};
 
@@ -82,6 +82,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==carsButton) {
+			//System.out.println(Main.my_patio._all_vehicles.get(8).toString());
 			admin_print();
 			f.dispose();
 			//ClientDataPage clientDataPage = new ClientDataPage
@@ -97,18 +98,27 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 		}
 		if (e.getSource()==buyButton) {
 			f.dispose();
-			AddVehiclePage addCar = new AddVehiclePage();
+			AddVehiclePageNew addCar = new AddVehiclePageNew();
+			addCar.start(Main.my_patio._all_vehicles);
+			//this._new_vehicle=addCar.getNewVehicle();
+			//System.out.println(Main.my_patio._all_vehicles.get(10).toString());
+			System.out.println("stammm");
 		}
 		
-		//LoginPage l1 = new LoginPage(1);
+		//LoginPage l1 = new Loginage(1);
 		
 	}
-    
+    public Vehicles getVehicle() {
+    	return _new_vehicle;
+    }
     public void admin_print() {
     	for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
+    		System.out.println(Main.my_patio._all_vehicles.get(9).toString());
 			Vehicles vehicle = (Vehicles) iterator.next();;
-			
-			
+			if(vehicle==null) {vehicle = (Vehicles) iterator.next();}
+			System.out.println(Main.my_patio._all_vehicles.size());
+			System.out.println(vehicle.toString());
+			//System.out.println(Main.my_patio._all_vehicles.size());
 			Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 			int a =JOptionPane.showOptionDialog(f, vehicle, "Search",JOptionPane.DEFAULT_OPTION, 
 					JOptionPane.QUESTION_MESSAGE,carImage1,
@@ -123,8 +133,8 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     public void sell() {
     	for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
 			Vehicles vehicle = (Vehicles) iterator.next();;
-			
-			
+			//System.out.println(Main.my_patio._all_vehicles.get(9).toString());
+			//if(vehicle==null) {vehicle = (Vehicles) iterator.next();}
 			Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 			int a =JOptionPane.showOptionDialog(f, vehicle, "Search",JOptionPane.DEFAULT_OPTION, 
 					JOptionPane.QUESTION_MESSAGE,carImage1,

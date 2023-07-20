@@ -102,6 +102,8 @@ public class LoginPage implements ActionListener {
     	    		// show AdminWindow();
     	    		f.dispose();
     	    		AdminMainPage adminMainPage = new AdminMainPage();
+    	    		Vehicles newVehicle = adminMainPage.getVehicle();
+    	    		Main.my_patio._all_vehicles.add(newVehicle);
     	    		} 
     	    	
     	    	else if (userType==Attributes.CLIENT) {
