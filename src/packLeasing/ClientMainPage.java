@@ -13,14 +13,17 @@ import javax.swing.ImageIcon;
 
 public class ClientMainPage implements ActionListener {
 	Attributes Attributes = null;
-	Client client = new Client();
+	Client client ;//= new Client();
     JFrame f = new JFrame("Client Page"); // set a topic
     // creates the buttons
     JButton checkButton = new JButton("My rented vehicles");
     JButton rentButton = new JButton("Rent a car");
     JButton buyButton = new JButton("Buy a car");
     ArrayList <Vehicles> _vehicles;
-    ClientMainPage() {
+    
+    ClientMainPage(String username,String password) {
+    	this.client = new Client(username,password);
+    	
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(800, 600); // set size
         f.setLocationRelativeTo(null); // Center the frame on the screen

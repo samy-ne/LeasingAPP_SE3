@@ -2,7 +2,9 @@ package packLeasing;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -15,7 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-
+import fileAPI.*;
 public class Client extends Person {	
 	// members
 	//ClientMainPage b = new ClientMainPage();
@@ -39,6 +41,58 @@ public class Client extends Person {
 		super();
 		this._my_contracts = _my_contracts;
 		this._my_matching_vehicles = _all_vehicles;
+	}
+	public Client(String user,String pass) {
+		super(user,pass,"208111111",50);
+		fileAPI api = new fileAPI();
+		
+		HashMap<String, String> userContractMap= api.getAllUserContracts();
+		List<Contract> contracts = api.getAllContracts();
+		this._my_matching_vehicles= new ArrayList<>();
+		this._my_contracts = new ArrayList<>();
+		
+		 // Build _my_contracts list
+	    for (String username : userContractMap.keySet()) {
+	        // Check if the username matches the client's username
+	        if (user.equals(username)) {
+	            // Get the contract ID associated with the client's username
+	            int contractID = Integer.parseInt(userContractMap.get(username));
+	            // Find the contract in allContracts with the matching contract ID
+	            for (Contract contract : contracts) {
+	                if (contract.getContractID() == contractID) {
+	                    // Add the contract to the _my_contracts list
+	                    _my_contracts.add(contract);
+	                    break; // Break the loop once the matching contract is found
+	                }
+	            }
+	        }
+	    }
+	 // Find the contract IDs associated with the client's username
+	    List<Integer> clientContractIDs = new ArrayList<>();
+	    for (String username : userContractMap.keySet()) {
+	        if (user.equals(username)) {
+	            int contractID = Integer.parseInt(userContractMap.get(username));
+	            clientContractIDs.add(contractID);
+	        }
+	    }
+		
+	 // Build _my_contracts list and _my_matching_vehicles list
+	    for (Contract contract : contracts) {
+	        // Check if the contract ID belongs to the client's contract IDs
+	        if (clientContractIDs.contains(contract.getContractID())) {
+	            // Add the contract to the _my_contracts list
+	            _my_contracts.add(contract);
+	            // Add the contract's vehicle to the _my_matching_vehicles list
+	            _my_matching_vehicles.add(contract.get_vehicle());
+	        }
+	    }
+	    
+	    
+	    System.out.println(this._my_matching_vehicles);
+	    System.out.println(this._my_contracts);
+		//this method builds all existing information about vehicles and contracts of the client
+		//with the username
+		
 	}
 
 	//public ArrayList<Vehicles> searchOptionManagment() {

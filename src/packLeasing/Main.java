@@ -52,9 +52,18 @@ public class Main {
 		_all_vehicles.add(vehicle6);
 		_all_vehicles.add(vehicle7);
 		_all_vehicles.add(vehicle8);
-		
+		System.out.println(_all_vehicles);
 		Main.my_patio._all_vehicles = _all_vehicles;
- 
+		
+		fileAPI api = new fileAPI();
+		api.setVehicleArray(_all_vehicles);//this is a must do not delete
+		System.out.println(api.getAllUserContracts());
+		//api.insertContract("shlomo", 1);
+		System.out.println("all the users and corresponding contracts :");
+		System.out.println(api.getAllUserContracts());
+		
+		System.out.println("all the contracts and corresponding vehicles:");
+		System.out.println(api.getAllContracts());
 		
 		
 		LoginPage loginpage = new LoginPage(1);
