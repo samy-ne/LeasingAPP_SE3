@@ -18,9 +18,9 @@ import java.awt.event.*;
 public class AdminMainPage extends WindowAdapter implements ActionListener {
     JFrame f = new JFrame("Admin Page"); // set a topic
     // creates the buttons
-    JButton carsButton = new JButton("Cars details");
+    JButton carsButton = new JButton("View all cars");
 //    JButton clientsButton = new JButton("Client details");
-    JButton sellButton = new JButton("Sell a car");
+    JButton sellButton = new JButton("View all contracts");
     JButton buyButton = new JButton("Add a vehicles to list");
     Vehicles _new_vehicle;
 	Object[] options = { "< Quit >", "< Next >"};
