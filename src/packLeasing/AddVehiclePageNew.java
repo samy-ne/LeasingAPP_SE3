@@ -173,7 +173,7 @@ public class AddVehiclePageNew {
 
             
             frame.dispose();
-            Cars vehicle = new Cars(color, rentingPrice, buyingPrice, brand, model,
+            try{Cars vehicle = new Cars(color, rentingPrice, buyingPrice, brand, model,
         			age, "batmobile.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
             System.out.println(Main.my_patio._all_vehicles.size());
             Main.my_patio._all_vehicles.add(vehicle);
@@ -181,7 +181,11 @@ public class AddVehiclePageNew {
             System.out.println(Main.my_patio._all_vehicles.size());
             System.out.println("mmmmmmmmmmmmm");
             System.out.println(Main.my_patio._all_vehicles.get(9).toString());
-            System.out.println("mmmmmmmmmmmmm2");
+            System.out.println("mmmmmmmmmmmmm2");}
+            catch(NullPointerException er) {
+            	JOptionPane.showMessageDialog(null,"One or more fields are invalid. Please notice that the age, renting and buying price must be numbers, and the rest are strings.");
+            	System.out.println(e);
+            	}
             AdminMainPage openAdminPage = new AdminMainPage();
         });
     }

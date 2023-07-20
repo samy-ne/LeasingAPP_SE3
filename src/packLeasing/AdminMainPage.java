@@ -49,7 +49,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
         int panelHeight = 600;
 
         carsButton.setFont(new Font("Arial", Font.BOLD, 20));
-        carsButton.setBounds(5, 5, 250, 550);
+        carsButton.setBounds(5, 5, 250, 100);
         carsButton.addActionListener(this);
         panel.add(carsButton);
 
@@ -59,16 +59,16 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 //        panel.add(clientsButton);
 
         sellButton.setFont(new Font("Arial", Font.BOLD, 20));
-        sellButton.setBounds(267,5,250,550);
+        sellButton.setBounds(267,5,250,100);
         sellButton.addActionListener(this);
         panel.add(sellButton);
         
         buyButton.setFont(new Font("Arial", Font.BOLD, 20));
-        buyButton.setBounds(530,5,250,550);
+        buyButton.setBounds(530,5,250,100);
         buyButton.addActionListener(this);
         panel.add(buyButton);
 
-        ImageIcon backgroundImageIcon = new ImageIcon("C:\\Users\\User\\eclipse-workspace\\LeasingAPP_SE3\\src\\packLeasing\\images\\back.jpg"); // Replace with the path to your image
+        ImageIcon backgroundImageIcon = new ImageIcon("back2.jpg"); // Replace with the path to your image
         JLabel backgroundImageLabel = new JLabel(backgroundImageIcon);
         backgroundImageLabel.setBounds(00, 0, panelWidth, panelHeight);
         panel.add(backgroundImageLabel);
@@ -113,7 +113,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     }
     public void admin_print() {
     	for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
-    		System.out.println(Main.my_patio._all_vehicles.get(9).toString());
+    		//System.out.println(Main.my_patio._all_vehicles.get(9).toString());
 			Vehicles vehicle = (Vehicles) iterator.next();;
 			if(vehicle==null) {vehicle = (Vehicles) iterator.next();}
 			System.out.println(Main.my_patio._all_vehicles.size());
