@@ -82,9 +82,7 @@ public class Login {
     	Map<String, String> userPasswordmap = api.returnUserPasswordMap();
     	for(Map.Entry<String, String> entry : userPasswordmap.entrySet()) {
     		String username = entry.getKey();
-    		System.out.println(currentuser);
-    		System.out.println(username);
-    		if(currentuser == username) {
+    		if(currentuser.equals(username)) {
     			return 1;
     			
     		}
