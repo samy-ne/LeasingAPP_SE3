@@ -76,7 +76,21 @@ public class Login {
             System.out.println("Username:" + username +" Password:" + new String(password)+ " UserType:" + userType);
         }
     }
-    
+    public int check_if_user_exists(String currentuser) {
+    	fileAPI api = new fileAPI();
+    	
+    	Map<String, String> userPasswordmap = api.returnUserPasswordMap();
+    	for(Map.Entry<String, String> entry : userPasswordmap.entrySet()) {
+    		String username = entry.getKey();
+    		System.out.println(currentuser);
+    		System.out.println(username);
+    		if(currentuser == username) {
+    			return 1;
+    			
+    		}
+    	}
+    	return -1;
+    }
     
     public void readUserAndPasswordsFromFile(String fileName) {
         // Implement reading user information from the file

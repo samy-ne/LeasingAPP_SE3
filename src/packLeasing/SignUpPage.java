@@ -67,16 +67,18 @@ public class SignUpPage implements ActionListener {
         		String username = t1.getText();
         		System.out.println(password);
             //logic that uses user name and passwords that the client entered to signUp and saves them. 
-        		Login login = new Login();
-        		login.addUser(username, password, 2); //this add new client
-    	    
-            //System.out.println(username);
-            //System.out.println(password);
-
-        		f.dispose();
-        		ClientMainPage openClientPage = new ClientMainPage(username,String.valueOf(password));
-        		String[] val =openClientPage.start(Main.my_patio._all_vehicles);
         		
+        		Login login = new Login();
+        		if(login.check_if_user_exists(username)==-1) {
+        				login.addUser(username, password, 2); //this add new client
+    	    
+        				//System.out.println(username);
+        			//System.out.println(password);
+
+        			f.dispose();
+        			ClientMainPage openClientPage = new ClientMainPage(username,String.valueOf(password));
+        			String[] val =openClientPage.start(Main.my_patio._all_vehicles);
+        		}
 
         	}    
         });

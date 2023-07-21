@@ -59,11 +59,11 @@ public class Main {
 		api.setVehicleArray(_all_vehicles);//this is a must do not delete
 		System.out.println(api.getAllUserContracts());
 		//api.insertContract("shlomo", 1);
-		System.out.println("all the users and corresponding contracts :");
-		System.out.println(api.getAllUserContracts());
+		//System.out.println("all the users and corresponding contracts :");
+		//System.out.println(api.getAllUserContracts());
 		
-		System.out.println("all the contracts and corresponding vehicles:");
-		System.out.println(api.getAllContracts());
+		//System.out.println("all the contracts and corresponding vehicles:");
+		//System.out.println(api.getAllContracts());
 		
 		
 		LoginPage loginpage = new LoginPage(1);
