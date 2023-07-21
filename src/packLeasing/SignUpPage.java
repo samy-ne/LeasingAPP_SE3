@@ -53,7 +53,7 @@ public class SignUpPage implements ActionListener {
 
 		
 		// Adding an image:
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\User\\eclipse-workspace\\LeasingAPP_SE3\\src\\packLeasing\\images\\openScreen.jpg"); // Replace with the actual path to your image
+        ImageIcon imageIcon = new ImageIcon("openScreen.jpg"); // Replace with the actual path to your image
         JLabel imageLabel = new JLabel(imageIcon);
         imageLabel.setBounds(5, 5, 570, 550);
         f.add(imageLabel);
@@ -78,6 +78,8 @@ public class SignUpPage implements ActionListener {
         			f.dispose();
         			ClientMainPage openClientPage = new ClientMainPage(username,String.valueOf(password));
         			String[] val =openClientPage.start(Main.my_patio._all_vehicles);
+        		}else{
+        			JOptionPane.showMessageDialog(null,"Username already in use. Please pick a different username.");
         		}
 
         	}    

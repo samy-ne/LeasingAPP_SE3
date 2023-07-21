@@ -174,7 +174,7 @@ public class AddVehiclePageNew {
             
             frame.dispose();
             try{Cars vehicle = new Cars(color, rentingPrice, buyingPrice, brand, model,
-        			age, "batmobile.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+        			age, imagePath, Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
             System.out.println(Main.my_patio._all_vehicles.size());
             Main.my_patio._all_vehicles.add(vehicle);
             System.out.println(vehicle.toString());
@@ -191,7 +191,7 @@ public class AddVehiclePageNew {
     }
     public Vehicles getNewVehicle() {
     	Vehicles vehicle = new Cars(color, rentingPrice, buyingPrice, brand, model,
-    			age, "batmobile.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+    			age, imagePath, Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
     	return vehicle;
     }
 	public void start(ArrayList<Vehicles> _all_vehicles) {

@@ -15,7 +15,7 @@ public class OptionPaneExample extends WindowAdapter{
 	//JFrame f;
 	//f.setBounds(100, 100, 450, 300);
 	Object[] options = { "< Previous >", "< Get Vehicle >", "< Next >"};
-	String[] ImageArray= { "car1.png","car2.png","car3.png"};
+	//String[] ImageArray= { "car1.png","car2.png","car3.png"};
 	public Contract contractvar;
 
 	

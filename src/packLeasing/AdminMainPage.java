@@ -20,7 +20,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     // creates the buttons
     JButton carsButton = new JButton("View all cars");
 //    JButton clientsButton = new JButton("Client details");
-    JButton sellButton = new JButton("View all contracts");
+    //JButton sellButton = new JButton("View all contracts");
     JButton buyButton = new JButton("Add a vehicle to list");
     Vehicles _new_vehicle;
 	Object[] options = { "< Quit >", "< Next >"};
@@ -57,12 +57,12 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 //        clientsButton.setBounds(200,5,190,550);
 //        clientsButton.addActionListener(this);
 //        panel.add(clientsButton);
-
+/*
         sellButton.setFont(new Font("Arial", Font.BOLD, 20));
         sellButton.setBounds(267,5,250,100);
         sellButton.addActionListener(this);
         panel.add(sellButton);
-        
+        */
         buyButton.setFont(new Font("Arial", Font.BOLD, 20));
         buyButton.setBounds(530,5,250,100);
         buyButton.addActionListener(this);
@@ -91,11 +91,12 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 //			f.dispose();
 //			//ListOfClientsPage clientList = new ListOfClientsPage(***insert the clients vector***);
 //		}
+		/*
 		if (e.getSource()==sellButton) {
 			sell();
 			f.dispose();
 			//ClientRentPage clientRentPage = new ClientRentPage
-		}
+		}*/
 		if (e.getSource()==buyButton) {
 			f.dispose();
 			AddVehiclePageNew addCar = new AddVehiclePageNew();
