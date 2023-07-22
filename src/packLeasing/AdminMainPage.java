@@ -99,8 +99,10 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 		}*/
 		if (e.getSource()==buyButton) {
 			f.dispose();
-			AddVehiclePageNew addCar = new AddVehiclePageNew();
-			addCar.start(Main.my_patio._all_vehicles);
+			AddVehiclePage addCar = new AddVehiclePage();
+			//?????????
+			//addCar.start(Main.my_patio._all_vehicles);
+			
 			//this._new_vehicle=addCar.getNewVehicle();
 			//System.out.println(Main.my_patio._all_vehicles.get(10).toString());
 			System.out.println("stammm");
