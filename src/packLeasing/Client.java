@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.awt.Font;
 import javax.swing.JFrame;
@@ -46,20 +47,21 @@ public class Client extends Person {
 		super(user,pass,"208111111",50);
 		fileAPI api = new fileAPI();
 		
-		HashMap<String, String> userContractMap= api.getAllUserContracts();
+		HashMap<String, ArrayList<String>> userContractMap= api.getAllUserContracts();
 		List<Contract> contracts = api.getAllContracts();
 		this._my_matching_vehicles= new ArrayList<>();
 		this._my_contracts = new ArrayList<>();
 		
-		 // Build _my_contracts list
+		// Build _my_contracts list
 	    for (String username : userContractMap.keySet()) {
 	        // Check if the username matches the client's username
 	        if (user.equals(username)) {
 	            // Get the contract ID associated with the client's username
-	            int contractID = Integer.parseInt(userContractMap.get(username));
-	            // Find the contract in allContracts with the matching contract ID
+	            //int contractID = Integer.parseInt(userContractMap.get(username));
+	        	ArrayList<String> allcontractIDs= userContractMap.get(username);
+	        	// Find the contract in allContracts with the matching contract ID
 	            for (Contract contract : contracts) {
-	                if (contract.getContractID() == contractID) {
+	                if (allcontractIDs.contains(Integer.toString(contract.getContractID()))) {//        contract.getContractID() == contractID)
 	                    // Add the contract to the _my_contracts list
 	                    _my_contracts.add(contract);
 	                    break; // Break the loop once the matching contract is found
@@ -68,18 +70,18 @@ public class Client extends Person {
 	        }
 	    }
 	 // Find the contract IDs associated with the client's username
-	    List<Integer> clientContractIDs = new ArrayList<>();
+	    ArrayList<String> clientContractIDs = new ArrayList<>();
 	    for (String username : userContractMap.keySet()) {
 	        if (user.equals(username)) {
-	            int contractID = Integer.parseInt(userContractMap.get(username));
-	            clientContractIDs.add(contractID);
+	        	clientContractIDs= userContractMap.get(username);
+	            //int contractID = Integer.parseInt(userContractMap.get(username));
+	            //clientContractIDs.add(contractID);
 	        }
 	    }
-		
 	 // Build _my_contracts list and _my_matching_vehicles list
 	    for (Contract contract : contracts) {
 	        // Check if the contract ID belongs to the client's contract IDs
-	        if (clientContractIDs.contains(contract.getContractID())) {
+	        if (clientContractIDs.contains(Integer.toString(contract.getContractID()))) {
 	            // Add the contract to the _my_contracts list
 	            _my_contracts.add(contract);
 	            // Add the contract's vehicle to the _my_matching_vehicles list
@@ -87,8 +89,9 @@ public class Client extends Person {
 	        }
 	    }
 	    
-	    
+	    System.out.println("the current user vehicles:");
 	    System.out.println(this._my_matching_vehicles);
+	    System.out.println("the current user contracts");
 	    System.out.println(this._my_contracts);
 		//this method builds all existing information about vehicles and contracts of the client
 		//with the username
@@ -166,6 +169,11 @@ public class Client extends Person {
 	{
 		//this._my_contracts = new ArrayList<Contract>();
 		this._my_contracts.add(c);
+		//insert to file for later use:
+		fileAPI api = new fileAPI();
+		api.insertContract(this._username, c.getContractID());
+		api.insertVehicleWithContract(c.getContractID(),api.getIndexVfVehicleVnVehicleArray(c._vehicle),c._start,c._finish);
+		
 		//v.set_available(false);
 	}
 	public void buyVehycle(Vehicles v)
