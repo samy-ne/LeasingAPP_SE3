@@ -1,4 +1,6 @@
 package packLeasing;
+import java.awt.Window.Type;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner; //to get input from user
@@ -22,8 +24,8 @@ public class Main {
 		
 		
 		//ArrayList<Vehicles> vehicles= my_patio.get_all_vehicles();
-		
-		System.out.println("wwwwwwwwwwwww");
+		LocalDate d1 = LocalDate.now();
+		System.out.println(d1);
 
 		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaOrangeGR.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
@@ -57,7 +59,8 @@ public class Main {
 		
 		fileAPI api = new fileAPI();
 		api.setVehicleArray(_all_vehicles);//this is a must do not delete
-		System.out.println(api.getAllUserContracts());
+		System.out.println(api.getAllUserContracts().get("kaka"));
+		System.out.println("asdasdasdasd");
 		//api.insertContract("shlomo", 1);
 		//System.out.println("all the users and corresponding contracts :");
 		//System.out.println(api.getAllUserContracts());
@@ -65,7 +68,7 @@ public class Main {
 		//System.out.println("all the contracts and corresponding vehicles:");
 		//System.out.println(api.getAllContracts());
 		
-		
+		System.out.println(api.getAllUserContracts());
 		LoginPage loginpage = new LoginPage(1);
 		//ListOfClientsPage hi = new ListOfClientsPage();
 		/*Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",

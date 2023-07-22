@@ -39,6 +39,7 @@ public class filehandleclass {
         	//File f = new File("usernames_passwords.txt‬");
             //String absolute = f.getAbsolutePath();
             //BufferedWriter writer = new BufferedWriter(new FileWriter(absolute, true));
+        	writer.newLine();
             writer.write(a);
             writer.newLine(); // Add a new line after each write, if needed.
             writer.close();

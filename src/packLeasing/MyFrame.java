@@ -18,6 +18,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	Contract returnContract= null;
 	int _buyOrRent;
 	Client _client;
+	
 	String[] _options = new String[4];
 	ArrayList <Vehicles> _vehicles =new ArrayList<Vehicles>();;
 	    JFrame f = new JFrame("Client Search Page"); // set a topic
@@ -145,7 +146,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	    //	return _options;
 	    //}
 	    
-	    public Contract start(ArrayList<Vehicles> vehicles,int buyOrRent) {
+	    public Contract start(ArrayList<Vehicles> vehicles,int buyOrRent) {//1 for rent
 	    	//Cars //vehicletrial =  new Cars("White", 0, 0, "Tesla", "Model X luxury SUV electric car with open falcon wing doors",
 					//0, "white-tesla-x-luxury-suv-electric-car-with-open-falcon-wing-doors-MXI30574.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 	    	//this._vehicles.add(vehicletrial);

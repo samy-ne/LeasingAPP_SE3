@@ -17,9 +17,12 @@ public class fileAPI {
 	public void setVehicleArray(ArrayList<Vehicles> allV) {
 		this._fileAPI_all_vehicles = allV;
 	}
-	public HashMap<String, String> getAllUserContracts() {
+	public int getIndexVfVehicleVnVehicleArray(Vehicles v) {
+		return this._fileAPI_all_vehicles.indexOf(v);
+	}
+	public HashMap<String, ArrayList<String>> getAllUserContracts() {
 		// this method returns a map with the username:contractid (as a string)
-		HashMap<String, String> userContractMap = new HashMap<>();
+		HashMap<String, ArrayList<String>> userContractMap = new HashMap<>();
 		
         filehandleclass fh = new filehandleclass();
         List<String> fileContents = fh.getUserContractfile();
@@ -28,9 +31,24 @@ public class fileAPI {
             if (parts.length == 2) {
                 String user = parts[0];
                 String contractID = parts[1];
-                userContractMap.put(user, contractID);
+                // Check if the user already exists in the map
+                if (userContractMap.containsKey(user)) {
+                    // If the user exists, get the existing ArrayList and add the new contract ID
+                    ArrayList<String> contractList = userContractMap.get(user);
+                    contractList.add(contractID);
+                } else {
+                    // If the user doesn't exist, create a new ArrayList and add the contract ID
+                    ArrayList<String> contractList = new ArrayList<>();
+                    contractList.add(contractID);
+                    userContractMap.put(user, contractList);
+                }
+            
             }
         }
+        
+        System.out.println("these are all the v");
+        System.out.println(userContractMap);
+        System.out.println("these are all the v");
         return userContractMap;
 	}
 	public List<Contract> getAllContracts() {
@@ -64,7 +82,9 @@ public class fileAPI {
             }
         }
         
+        
         return contracts;
+        
     }
 	private static Vehicles getVehicleById(int vehicleID) {
         // Implement your logic to get the Vehicles object based on the vehicleID.
@@ -81,6 +101,13 @@ public class fileAPI {
 		String contractString = user + ":" + contractID;
         filehandleclass fh = new filehandleclass();
         fh.appendToUserContractFile(contractString);
+        return 1;
+	}
+	public int insertVehicleWithContract(int ContractID,int Vehicle,LocalDate date1, LocalDate date2) {
+		//this method inserts contract as  String:String of user:contract
+		String contractVehicleString = ContractID + ":" +date1.toString()+":"+date1.toString()+":"+ Vehicle;
+        filehandleclass fh = new filehandleclass();
+        fh.appendToUserContractVehiclesFile(contractVehicleString);
         return 1;
 	}
 	
