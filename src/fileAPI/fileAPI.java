@@ -134,7 +134,7 @@ public class fileAPI {
             return -1;
 		}
 		
-		String line = user + ":" + password + ":" + "2"+"\n";
+		String line = "\n"+user + ":" + password + ":" + "2"+"\n";
 		System.out.println(line);
 		filehandleclass fh = new filehandleclass();
 		fh.appendToFile(line);

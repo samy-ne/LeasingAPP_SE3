@@ -29,7 +29,6 @@ public class Main {
 
 		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaOrangeGR.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
-		vehicle1._ticketOpned = true;
 		Cars vehicle2 =  new Cars("Gray", 2000, 50000, "Tesla", "2023 Model S",
 				0, "TeslaModelSGray.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle3 =  new Cars("White", 3000, 70000, "Tesla", "2023 Model Y",
