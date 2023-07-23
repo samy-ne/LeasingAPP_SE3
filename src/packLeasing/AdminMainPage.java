@@ -83,7 +83,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 			AddVehiclePageNew addCar = new AddVehiclePageNew();
 			addCar.start(Main.my_patio._all_vehicles);
 			
-			System.out.println("stammm");
+			//System.out.println("stammm");
 			
 		}
 				
@@ -100,8 +100,8 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     		//System.out.println(Main.my_patio._all_vehicles.get(9).toString());
 			Vehicles vehicle = (Vehicles) iterator.next();;
 			if(vehicle==null) {vehicle = (Vehicles) iterator.next();}
-			System.out.println(Main.my_patio._all_vehicles.size());
-			System.out.println(vehicle.toString());
+			//System.out.println(Main.my_patio._all_vehicles.size());
+			//System.out.println(vehicle.toString());
 			//System.out.println(Main.my_patio._all_vehicles.size());
 			Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 			int a =JOptionPane.showOptionDialog(f, vehicle, "Search",JOptionPane.DEFAULT_OPTION, 

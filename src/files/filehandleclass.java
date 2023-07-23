@@ -88,9 +88,7 @@ public class filehandleclass {
 	public void appendToVehicleTicketFile(String a) {
         try {
         	//src/files/usernames_passwords.txt
-        	System.out.println("this is the string");
-        	System.out.println(a);
-        	System.out.println("this is the string");
+        	
         	File file = new File("files/VehicleTicket.txt"); // Change the path if needed
         	BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
         	

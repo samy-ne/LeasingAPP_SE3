@@ -135,14 +135,18 @@ public class WorkerMainPage implements ActionListener {
 		        if (vehicle == null) {
 		            vehicle = (Vehicles) iterator.next();
 		        }
-
+		        
+		        
+		        
+		        
+		        
 		        // Check if the vehicle's 'openTicket' attribute is true
 		        if (vehicle._ticketOpned) {
 		            // If 'openTicket' is true, print the vehicle ID and the message "needs fixing"
 		            System.out.println("car ID: " + vehicle.get_id() + " needs fixing");
 
-		            System.out.println(Main.my_patio._all_vehicles.size());
-		            System.out.println(vehicle.toString());
+		            //System.out.println(Main.my_patio._all_vehicles.size());
+		            //System.out.println(vehicle.toString());
 		            // System.out.println(Main.my_patio._all_vehicles.size());
 		            Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 		            int a = JOptionPane.showOptionDialog(f, vehicle, "Search", JOptionPane.DEFAULT_OPTION,
@@ -151,9 +155,9 @@ public class WorkerMainPage implements ActionListener {
 		            if (a == 2) { // Check if "Send for repair" was clicked (index 2 in options1)
 		            	filehandleclass fh = new filehandleclass();
 		                fh.removeVehicleAtIndex(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
-		                System.out.println("the index is");
-		                System.out.println(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
-		                System.out.println("the index is");
+		                //System.out.println("the index is");
+		                //System.out.println(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
+		                //System.out.println("the index is");
 		            	vehicle._ticketOpned = false; // Set '_ticketOpned' to false
 		                JOptionPane.showMessageDialog(f, "Car has been sent for repair");
 		            }
@@ -180,8 +184,13 @@ public class WorkerMainPage implements ActionListener {
     	try{for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
 			Vehicles vehicle = (Vehicles) iterator.next();;
 			if(vehicle==null) {vehicle = (Vehicles) iterator.next();}
-			System.out.println(Main.my_patio._all_vehicles.size());
-			System.out.println(vehicle.toString());
+			
+			
+			
+			
+			
+			//System.out.println(Main.my_patio._all_vehicles.size());
+			//System.out.println(vehicle.toString());
 			//System.out.println(Main.my_patio._all_vehicles.size());
 			Icon carImage1 = new ImageIcon(vehicle.get_image_path());
 			int a =JOptionPane.showOptionDialog(f, vehicle, "Search",JOptionPane.DEFAULT_OPTION, 

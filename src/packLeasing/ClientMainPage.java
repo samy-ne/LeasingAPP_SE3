@@ -90,7 +90,7 @@ public class ClientMainPage implements ActionListener {
 			cont = frameSearch.start(_vehicles,1,client);
 
 			
-			System.out.println("ssssssssssssssssssssssssssssss");
+			//System.out.println("ssssssssssssssssssssssssssssss");
 
 		}
 		

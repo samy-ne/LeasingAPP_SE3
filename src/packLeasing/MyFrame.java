@@ -164,8 +164,8 @@ public class MyFrame extends JFrame implements ActionListener {
 	    	return _vehicles;
 	    }
 	    public Contract searchOptionManagment(String[] val) {
-	    	System.out.println("check1");
-	    	System.out.println(val[0]);
+	    	//System.out.println("check1");
+	    	//System.out.println(val[0]);
 			if (val[0]=="Sort by price from lowest to highest") {
 				//sortBuyingPriceLowToHighMyFrame(_vehicles);
 				//sortColor(sortBuyingPriceLowToHighMyFrame(_vehicles),val[1]);
@@ -174,11 +174,11 @@ public class MyFrame extends JFrame implements ActionListener {
 				}else {
 					sortType(sortBrand(sortColor( sortRentingPriceLowToHighMyFrame(_vehicles),val[1]),val[2]),val[3]);
 				}
-				System.out.println("check done");
+				//System.out.println("check done");
 				//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
 				OptionPaneExample ope=new  OptionPaneExample(0,_buyOrRent, _vehicles,_client);
 				 returnContract=ope.getchosen();
-				System.out.println("check2");
+				//System.out.println("check2");
 				//return returnContract;
 				//_vehicles=_vehicles_original;
 			}else {
@@ -334,9 +334,9 @@ public class MyFrame extends JFrame implements ActionListener {
 	    	String string1;
 			ArrayList<Vehicles> matching_colors =  _matchingVehicles;
 			Iterator<Vehicles> it = matching_colors.iterator();
-			System.out.println("checkkkbbbbbbbbbbbbbbkk");
+			//System.out.println("checkkkbbbbbbbbbbbbbbkk");
 			if (type=="Any Vehicle") {
-				System.out.println("checkkkkkttttttttt");
+				//System.out.println("checkkkkkttttttttt");
 				return _matchingVehicles;
 			}
 			if (type=="Cars") {
