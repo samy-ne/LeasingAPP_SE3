@@ -5,12 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.ImageIcon;
-
 import javax.swing.*;  
 import java.awt.event.*;
 
@@ -96,8 +90,7 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     
     
     public void admin_print() {
-    	for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
-    		//System.out.println(Main.my_patio._all_vehicles.get(9).toString());
+    	try{for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
 			Vehicles vehicle = (Vehicles) iterator.next();;
 			if(vehicle==null) {vehicle = (Vehicles) iterator.next();}
 			System.out.println(Main.my_patio._all_vehicles.size());
@@ -111,6 +104,11 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 			    break;  
 			}  
 		}
+    	}catch(IndexOutOfBoundsException e) 
+    	{
+    		JOptionPane.showMessageDialog(null,"Not available.");
+    		System.out.println(e);
+    	}
     }
     
     
