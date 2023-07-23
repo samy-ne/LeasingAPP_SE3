@@ -29,13 +29,15 @@ public class WorkerMainPage implements ActionListener {
     // creates the buttons
     JButton carsButton = new JButton("Cars details");
     JButton cleintsButton = new JButton("My employment terms");
-    //JButton mySalary = new JButton("Salary"); ???????
+    JButton fixButton = new JButton("Send a car for repair"); 
     Object[] options = { "< Quit >", "< Next >"};
+    Object[] options1 = { "< Quit >", "< Next >", "< Send for repair >"};
 
     WorkerMainPage() {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(800, 600); // set size
         f.setLocationRelativeTo(null); // Center the frame on the screen
+          
 
         // set a panel
         JPanel panel = new JPanel() {
@@ -54,17 +56,22 @@ public class WorkerMainPage implements ActionListener {
         int panelHeight = 600;
 
         carsButton.setFont(new Font("Arial", Font.BOLD, 20));
-        carsButton.setBounds(50, 5, 300, 550);
+        carsButton.setBounds(5, 5, 250, 100);
         carsButton.addActionListener(this);
         panel.add(carsButton);
 
         cleintsButton.setFont(new Font("Arial", Font.BOLD, 20));
-        cleintsButton.setBounds(450,5,300,550);
+        cleintsButton.setBounds(267,5,250,100);
         cleintsButton.addActionListener(this);
         panel.add(cleintsButton);
+        
+        fixButton.setFont(new Font("Arial", Font.BOLD, 20));
+        fixButton.setBounds(530,5,250,100);
+        fixButton.addActionListener(this);
+        panel.add(fixButton);
 
 
-        ImageIcon backgroundImageIcon = new ImageIcon("C:\\Users\\User\\eclipse-workspace\\LeasingAPP_SE3\\src\\packLeasing\\images\\back.jpg"); // Replace with the path to your image
+        ImageIcon backgroundImageIcon = new ImageIcon("back2.jpg"); // Replace with the path to your image
         JLabel backgroundImageLabel = new JLabel(backgroundImageIcon);
         backgroundImageLabel.setBounds(00, 0, panelWidth, panelHeight);
         panel.add(backgroundImageLabel);
@@ -101,9 +108,50 @@ public class WorkerMainPage implements ActionListener {
 					+ "The employer reserves the right to modify any the policies.");
 			//ClientBuyPage clientBuyPage = new ClientBuyPage
 		}
+		if (e.getSource() == fixButton) {
+		    boolean hasOpenTickets = false; // Variable to track if any vehicle with open ticket is found
 
-		
+		    for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
+		        Vehicles vehicle = (Vehicles) iterator.next();
+		        if (vehicle == null) {
+		            vehicle = (Vehicles) iterator.next();
+		        }
+
+		        // Check if the vehicle's 'openTicket' attribute is true
+		        if (vehicle._ticketOpned) {
+		            // If 'openTicket' is true, print the vehicle ID and the message "needs fixing"
+		            System.out.println("car ID: " + vehicle.get_id() + " needs fixing");
+
+		            System.out.println(Main.my_patio._all_vehicles.size());
+		            System.out.println(vehicle.toString());
+		            // System.out.println(Main.my_patio._all_vehicles.size());
+		            Icon carImage1 = new ImageIcon(vehicle.get_image_path());
+		            int a = JOptionPane.showOptionDialog(f, vehicle, "Search", JOptionPane.DEFAULT_OPTION,
+		                    JOptionPane.QUESTION_MESSAGE, carImage1, options1, options1[0]);
+
+		            if (a == 2) { // Check if "Send for repair" was clicked (index 2 in options1)
+		                vehicle._ticketOpned = false; // Set '_ticketOpned' to false
+		                JOptionPane.showMessageDialog(f, "Car has been sent for repair");
+		            }
+
+		            if (a == 0) {
+		                break;
+		            }
+
+		            hasOpenTickets = true; // Set the flag to true if a vehicle with open ticket is found
+		        }
+		    }
+
+		    if (e.getSource() == fixButton && !hasOpenTickets && !Main.my_patio._all_vehicles.isEmpty()) {
+		        // Show the message only when the source is fixButton,
+		        // there are no open tickets, and the vehicle list is not empty
+		        JOptionPane.showMessageDialog(f, "There are no open tickets");
+		    }
+		}
+
+	
 	}
+    
     public void worker_print() {
     	try{for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
 			Vehicles vehicle = (Vehicles) iterator.next();;

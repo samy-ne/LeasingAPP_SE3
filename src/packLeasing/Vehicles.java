@@ -15,8 +15,10 @@ public abstract class Vehicles {
 	private Integer _age;
 	private Integer _id;
 	private String _image_path;
-    
+	
+	
     boolean _available = true;
+    boolean _ticketOpned = false;
 	
 	
 	//Constructors

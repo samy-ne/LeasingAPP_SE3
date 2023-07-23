@@ -6,15 +6,12 @@ import java.awt.Font;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.awt.Font;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 public class DisplayContracts extends WindowAdapter{  
 
  
 	//JFrame f;
 	//f.setBounds(100, 100, 450, 300);
-	Object[] options = { "< Previous >", "< View contract's detail >", "< Next >"};
+	Object[] options = { "< Previous >", "< View contract's detail >", "< Next >", "< open ticket >"};
 	String[] ImageArray= { "car1.png","car2.png","car3.png"};
 	public Contract contractvar;
 
@@ -68,6 +65,8 @@ public class DisplayContracts extends WindowAdapter{
 					options, options[0]);
 	    	}
 	    }
+	    
+
 
 	    string1.setBounds(100,100,450,300);
 	    JTextField txt=new JTextField("add");
@@ -84,15 +83,20 @@ public class DisplayContracts extends WindowAdapter{
 			num = num -1;
 			new DisplayContracts(num,buyOrRent,_contracts);  
 		}  
-		if(a==JOptionPane.NO_OPTION){  
+		else if(a==JOptionPane.NO_OPTION){  
 		      
 			 JOptionPane.showMessageDialog(null,contract.getDate());     
 			//new DisplayContracts(num,buyOrRent,_contracts);
 		}
-		if(a==JOptionPane.CANCEL_OPTION){ 
+		else if(a==JOptionPane.CANCEL_OPTION){ 
 			num = num +1;
 			DisplayContracts jopt = new DisplayContracts(num,buyOrRent,_contracts);
-			}  
+			}
+		else if  (a == 3) {
+            // The "Open ticket" option was selected
+            vehicle._ticketOpned = true;
+            JOptionPane.showMessageDialog(f, "a ticket for your car has been sent");
+            }
 		
 	}catch(IndexOutOfBoundsException e) 
 	{
@@ -115,3 +119,5 @@ public class DisplayContracts extends WindowAdapter{
 		return contractvar;
 	}
 }
+
+
