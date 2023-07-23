@@ -1,6 +1,8 @@
 package packLeasing;
 import javax.swing.*;
 
+import fileAPI.fileAPI;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
@@ -94,7 +96,14 @@ public class DisplayContracts extends WindowAdapter{
 			}
 		else if  (a == 3) {
             // The "Open ticket" option was selected
+			fileAPI api = new fileAPI();
+			api.appendVehicleToTicketFile(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
+            System.out.println("asdasdasda");
+            System.out.println(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
+            System.out.println("asdasdasda");
+            
             vehicle._ticketOpned = true;
+            
             JOptionPane.showMessageDialog(f, "a ticket for your car has been sent");
             }
 		

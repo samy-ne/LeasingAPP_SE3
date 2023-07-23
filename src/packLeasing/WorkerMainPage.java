@@ -2,12 +2,17 @@ package packLeasing;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import fileAPI.fileAPI;
+import files.filehandleclass;
+
 import javax.swing.ImageIcon;
 
 import javax.swing.*;  
@@ -110,7 +115,21 @@ public class WorkerMainPage implements ActionListener {
 		}
 		if (e.getSource() == fixButton) {
 		    boolean hasOpenTickets = false; // Variable to track if any vehicle with open ticket is found
-
+		    fileAPI api = new fileAPI();
+		    ArrayList<Integer> vehiclesWithTickets =  api.returnVehiclesWithTickets();
+		    //check which cars are already with a ticket and update accordingly
+		    for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
+		    	Vehicles vehicle = (Vehicles) iterator.next();
+		    	if (vehicle == null) {
+		            vehicle = (Vehicles) iterator.next();
+		        }
+		    	
+		    	if(vehiclesWithTickets.contains(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle))) {
+		    		vehicle._ticketOpned =true;
+		    	}
+			}
+		    
+		    
 		    for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
 		        Vehicles vehicle = (Vehicles) iterator.next();
 		        if (vehicle == null) {
@@ -130,7 +149,12 @@ public class WorkerMainPage implements ActionListener {
 		                    JOptionPane.QUESTION_MESSAGE, carImage1, options1, options1[0]);
 
 		            if (a == 2) { // Check if "Send for repair" was clicked (index 2 in options1)
-		                vehicle._ticketOpned = false; // Set '_ticketOpned' to false
+		            	filehandleclass fh = new filehandleclass();
+		                fh.removeVehicleAtIndex(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
+		                System.out.println("the index is");
+		                System.out.println(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
+		                System.out.println("the index is");
+		            	vehicle._ticketOpned = false; // Set '_ticketOpned' to false
 		                JOptionPane.showMessageDialog(f, "Car has been sent for repair");
 		            }
 

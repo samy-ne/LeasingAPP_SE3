@@ -25,7 +25,7 @@ public class Main {
 		
 		//ArrayList<Vehicles> vehicles= my_patio.get_all_vehicles();
 		LocalDate d1 = LocalDate.now();
-		System.out.println(d1);
+		//System.out.println(d1);
 
 		Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",
 				0, "ToyotaOrangeGR.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
@@ -44,8 +44,8 @@ public class Main {
 				0, "batmobile.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
 		Cars vehicle8 =  new Cars("Off-White", 2500, 60000, "The Walt Disney Company", "Indiana Jones Car Model",
 				0, "IndianaJonesCar.png", Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
-		System.out.println(vehicle4.get_id());
-		System.out.println(vehicle5.get_id());
+		//System.out.println(vehicle4.get_id());
+		//System.out.println(vehicle5.get_id());
 		ArrayList<Vehicles> _all_vehicles = new ArrayList<Vehicles> ();
 		_all_vehicles.add(vehicle1);
 		_all_vehicles.add(vehicle2);
@@ -55,13 +55,13 @@ public class Main {
 		_all_vehicles.add(vehicle6);
 		_all_vehicles.add(vehicle7);
 		_all_vehicles.add(vehicle8);
-		System.out.println(_all_vehicles);
+		//System.out.println(_all_vehicles);
 		Main.my_patio._all_vehicles = _all_vehicles;
 		
 		fileAPI api = new fileAPI();
 		api.setVehicleArray(_all_vehicles);//this is a must do not delete
-		System.out.println(api.getAllUserContracts().get("kaka"));
-		System.out.println("asdasdasdasd");
+		//System.out.println(api.getAllUserContracts().get("kaka"));
+		//System.out.println("asdasdasdasd");
 		//api.insertContract("shlomo", 1);
 		//System.out.println("all the users and corresponding contracts :");
 		//System.out.println(api.getAllUserContracts());
@@ -69,7 +69,7 @@ public class Main {
 		//System.out.println("all the contracts and corresponding vehicles:");
 		//System.out.println(api.getAllContracts());
 		
-		System.out.println(api.getAllUserContracts());
+		//System.out.println(api.getAllUserContracts());
 		LoginPage loginpage = new LoginPage(1);
 		//ListOfClientsPage hi = new ListOfClientsPage();
 		/*Cars vehicle1 =  new Cars("Orange", 0, 80000, "Toyota", "2023 GR86 Special Edition",

@@ -15,10 +15,10 @@ public class fileAPI {
 	//api.insertnewworker(String,String)
 	private static ArrayList<Vehicles> _fileAPI_all_vehicles;
 	public void setVehicleArray(ArrayList<Vehicles> allV) {
-		this._fileAPI_all_vehicles = allV;
+		_fileAPI_all_vehicles = allV;
 	}
-	public int getIndexVfVehicleVnVehicleArray(Vehicles v) {
-		return this._fileAPI_all_vehicles.indexOf(v);
+	public static int getIndexVfVehicleVnVehicleArray(Vehicles v) {
+		return _fileAPI_all_vehicles.indexOf(v);
 	}
 	public HashMap<String, ArrayList<String>> getAllUserContracts() {
 		// this method returns a map with the username:contractid (as a string)
@@ -46,9 +46,9 @@ public class fileAPI {
             }
         }
         
-        System.out.println("these are all the v");
-        System.out.println(userContractMap);
-        System.out.println("these are all the v");
+        //System.out.println("these are all the v");
+       // System.out.println(userContractMap);
+        //System.out.println("these are all the v");
         return userContractMap;
 	}
 	public List<Contract> getAllContracts() {
@@ -65,11 +65,10 @@ public class fileAPI {
                     LocalDate startDate = LocalDate.parse(parts[1]);
                     LocalDate finishDate = LocalDate.parse(parts[2]);
                     int vehicleID = Integer.parseInt(parts[3]);
-                    System.out.println(startDate);
-                    System.out.println(finishDate);
-                    System.out.println(contractID);
-                    System.out.println(vehicleID);
-                    // Here, you should have a method to retrieve a Vehicle object based on the vehicleID.
+                    //System.out.println(startDate);
+                    //System.out.println(finishDate);
+                    //System.out.println(contractID);
+                    //System.out.println(vehicleID);
                     Vehicles vehicle = _fileAPI_all_vehicles.get(vehicleID);;
                     
                     if (vehicle != null) {
@@ -163,10 +162,31 @@ public class fileAPI {
 		return UserPassMap;
 		
 	}
+	public void appendVehicleToTicketFile(int vehicleID) {
+		filehandleclass fh = new filehandleclass();
+		fh.appendToVehicleTicketFile(Integer.toString(vehicleID));
+	}
+	public ArrayList<Integer> returnVehiclesWithTickets(){
+		ArrayList<Integer> vehiclesWithTickets = new ArrayList<>();
+        filehandleclass fh = new filehandleclass();
+        List<String> fileContents = fh.getVehicleTicketfile();
+        if (fileContents != null) {
+            for (String line : fileContents) {
+                try {
+                    int vehicleID = Integer.parseInt(line.trim());
+                    vehiclesWithTickets.add(vehicleID);
+                } catch (NumberFormatException e) {
+                   
+                }
+            }
+        }
+
+        return vehiclesWithTickets;
 	
+	}
 	public HashMap<String, String> returnWorkerPasswordMap() {
 		HashMap<String, String> UserPassMap = new HashMap<String,String>();
-		//code to import the file contents and place to map
+		
 		filehandleclass fh = new filehandleclass();
 		List<String> fileContents = fh.getfile();
 		for(String line:fileContents) {
@@ -187,7 +207,7 @@ public class fileAPI {
 	}
 	public HashMap<String, String> returnBossPasswordMap() {
 		HashMap<String, String> UserPassMap = new HashMap<String,String>();
-		//code to import the file contents and place to map
+		
 		filehandleclass fh = new filehandleclass();
 		List<String> fileContents = fh.getfile();
 		for(String line:fileContents) {
