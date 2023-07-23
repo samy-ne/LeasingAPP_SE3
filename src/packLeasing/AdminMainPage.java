@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import javax.swing.*;  
 import java.awt.event.*;
@@ -108,7 +109,12 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     	{
     		JOptionPane.showMessageDialog(null,"Not available.");
     		System.out.println(e);
+    	}catch(NoSuchElementException e) 
+    	{
+    		JOptionPane.showMessageDialog(null,"Not available.");
+    		System.out.println(e);
     	}
+    	
     }
     
     

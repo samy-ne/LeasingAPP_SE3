@@ -184,10 +184,15 @@ public class AddVehiclePageNew {
 
             
             frame.dispose();
-            try{Cars vehicle = new Cars(color, rentingPrice, buyingPrice, brand, model,
+            try{
+            	Vehicles vehicle;
+            	if (type=="Car") {vehicle = new Cars(color, rentingPrice, buyingPrice, brand, model,
         			age, imagePath, Attributes.MOTOR_ELETRIC, Attributes.GEARS_MANUAL, Attributes.ROOF_CLOSED);
+            }else {vehicle = new Motorcycle(color, rentingPrice, buyingPrice, brand, model,
+        			age, imagePath);}
             System.out.println(Main.my_patio._all_vehicles.size());
-            Main.my_patio._all_vehicles.add(vehicle);
+            
+			Main.my_patio._all_vehicles.add(vehicle);
             System.out.println(vehicle.toString());
             System.out.println(Main.my_patio._all_vehicles.size());
             System.out.println("mmmmmmmmmmmmm");
