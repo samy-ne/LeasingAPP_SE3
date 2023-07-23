@@ -89,9 +89,9 @@ public class DisplayContracts extends WindowAdapter{
             // The "Open ticket" option was selected
 			fileAPI api = new fileAPI();
 			api.appendVehicleToTicketFile(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
-            System.out.println("asdasdasda");
-            System.out.println(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
-            System.out.println("asdasdasda");
+            //System.out.println("asdasdasda");
+            //System.out.println(fileAPI.getIndexVfVehicleVnVehicleArray(vehicle));
+            //System.out.println("asdasdasda");
             
             vehicle._ticketOpned = true;
             

@@ -4,8 +4,6 @@ kaka:1000
 kaka:126
 tomer:66
 kaka:432
-kaka:887
-kaka:913
-shlomi:255
+
 asdasd:845
-jhon:991
+yosinewuser:322

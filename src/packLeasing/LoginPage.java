@@ -81,8 +81,8 @@ public class LoginPage implements ActionListener {
         	String password = new String(passwordChar);
             String username = t1.getText();
             // Perform login logic with the username and password
-            System.out.println(username);
-            System.out.println(password);
+            //System.out.println(username);
+            //System.out.println(password);
             //System.out.println(password);
             //System.out.println(password);
 

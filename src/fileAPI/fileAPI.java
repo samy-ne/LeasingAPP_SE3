@@ -86,11 +86,7 @@ public class fileAPI {
         
     }
 	private static Vehicles getVehicleById(int vehicleID) {
-        // Implement your logic to get the Vehicles object based on the vehicleID.
-        // This can be done by reading from another file or a database.
-        // For this example, let's assume you have a method to get a Vehicle object by its ID.
-        // Replace this with your actual implementation.
-		
+        //unused
         return null;
     }
 	

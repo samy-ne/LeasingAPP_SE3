@@ -89,10 +89,10 @@ public class Client extends Person {
 	        }
 	    }
 	    
-	    System.out.println("the current user vehicles:");
-	    System.out.println(this._my_matching_vehicles);
-	    System.out.println("the current user contracts");
-	    System.out.println(this._my_contracts);
+	    //System.out.println("the current user vehicles:");
+	    //System.out.println(this._my_matching_vehicles);
+	    //System.out.println("the current user contracts");
+	    //System.out.println(this._my_contracts);
 		//this method builds all existing information about vehicles and contracts of the client
 		//with the username
 		
@@ -185,7 +185,7 @@ public class Client extends Person {
 	{
 		for (Iterator iterator = _my_contracts.iterator(); iterator.hasNext();) {
 			Contract contract = (Contract) iterator.next();
-			System.out.println((Vehicles) contract._vehicle);
+			//System.out.println((Vehicles) contract._vehicle);
 		}
 	}
 	

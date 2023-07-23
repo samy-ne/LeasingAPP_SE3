@@ -73,7 +73,7 @@ public class Login {
             UserInfo userInfo = entry.getValue();
             char[] password = userInfo.getPassword();
             int userType = userInfo.getUserType();
-            System.out.println("Username:" + username +" Password:" + new String(password)+ " UserType:" + userType);
+            //System.out.println("Username:" + username +" Password:" + new String(password)+ " UserType:" + userType);
         }
     }
     public int check_if_user_exists(String currentuser) {
