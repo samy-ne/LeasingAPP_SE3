@@ -91,11 +91,7 @@ public class SignUpPage implements ActionListener {
 
 	}
 
-	//@Override
-	//public void actionPerformed(ActionEvent e) {
-	//	if (e.getSource() == signUp) {
-	//		LoginPage login = new LoginPage(1);
-	//	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

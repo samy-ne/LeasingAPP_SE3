@@ -83,17 +83,10 @@ public class LoginPage implements ActionListener {
             // Perform login logic with the username and password
             System.out.println(username);
             System.out.println(password);
-            System.out.println(password);
-            System.out.println(password);
-    		// login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~               
-    		//static final Integer NoSuchUser = 0 ;
-    		//static final Integer Admin = 1;
-    		//static final Integer Client = 2;
-    		//static final Integer Worker = 3;
+            //System.out.println(password);
+            //System.out.println(password);
 
 
-
-    	    // TODO if someone press sign in show window of sign in
     		// $$$$$$$$$ sign in start $$$$$$$$$             
     	    authenticated = login.verifyPassword(username, password);//check if password+user OK(?!)
     	    if (authenticated) { //if password is good open the right window
@@ -107,34 +100,30 @@ public class LoginPage implements ActionListener {
     	    		} 
     	    	
     	    	else if (userType==Attributes.CLIENT) {
-    	    		// TODO show ClientWindow();
+    	   
     	    		f.dispose();
-    	    		
-    	    		//Client Clientsample = new Client(my_patio.get_all_vehicles());
     	    		ClientMainPage Clientsample = new ClientMainPage(username,password);
-    	    		//ClientMainPage b = new ClientMainPage();
+    	    		
     	    		String[] val =Clientsample.start(Main.my_patio._all_vehicles);
     	    		} 
     	    	
     	    	else if (userType==Attributes.WORKER) {
-    	    		// TODO show WorkerWindow();
+    	    		// show WorkerWindow();
     	    		f.dispose();
     	    		WorkerMainPage workerMainPage = new WorkerMainPage();
     	    		}
     	        }
     	    else {//try again 
-    	    	// TODO show window of "Wrong username or password. Please try again.");
+    	    	// show window of "Wrong username or password. Please try again.");
     	    	f.dispose();
     	    	LoginPage loginPage = new LoginPage(0);
     	        }
     	    
     		// $$$$$$$$$ sign in end $$$$$$$$$             
-    	    // login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
     	    
             
         });
         
-        //f.add(signIn);
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         

@@ -27,16 +27,7 @@ public class DisplayContracts extends WindowAdapter{
 			Contract contract =_contracts.get(num);
 			Vehicles vehicle=contract.get_vehicle();
 		Icon carImage1 = new ImageIcon(vehicle.get_image_path());
-		//JLabel BrandLabel = new JLabel(vehicle.get_brand());
-		//BrandLabel.setFont (new java.awt.Font("Arial", java.awt.Font.BOLD, 22));
-		
-		
-		
-		//JLabel BrandLabel = new JLabel(vehicle.get_brand());
-		//BrandLabel.setBounds(100,100,450,300);
-	    //JTextField txt=new JTextField("add");
-	    //BrandLabel.setFont (new Font("Arial", Font.BOLD, 22));
-	    //f.setVisible(true);
+
 	    JLabel label = new JLabel("MESSAGE");
 	    label.setFont(new Font("Arial", Font.BOLD, 18));
 	    JLabel string1=new JLabel("Some Text");

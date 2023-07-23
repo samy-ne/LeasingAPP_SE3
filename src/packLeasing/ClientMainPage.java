@@ -66,55 +66,32 @@ public class ClientMainPage implements ActionListener {
 
         f.add(panel);
 
-    
-        //f.setVisible(true); // must set as true to see the window
+        f.setVisible(true); // must set as true to see the window
     }
+    
     String[] returnVal= null;
     Contract cont = null;
     @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==checkButton) {
-			//f.dispose();
-			//ClientDataPage clientDataPage = new ClientDataPage
+
 			new DisplayContracts(0,1,client.get_my_contracts());
-			/*ArrayList<Contract> contractlist =client.get_my_contracts();
-			Contract contract =contractlist.get(0);
-			System.out.println(contract.toString());*/
+
 		}
 		if (e.getSource()==buyButton) {
 			//f.dispose();
 			MyFrame frameSearch = new MyFrame();
 			cont = frameSearch.start(_vehicles,0);
-			//AvailableCarsPage a = new AvailableCarsPage(_vehicles);
-			//start(_vehicles);
-			//while(returnVal==null) {
-			//returnVal =frameSearch.get_Search_Options();
-			//}
-			// searchOptionManagment(returnVal);
-			//ClientBuyPage clientBuyPage = new ClientBuyPage
+
 		}
 		if (e.getSource()==rentButton) {
 			//f.dispose();
 			MyFrame frameSearch = new MyFrame();
 			cont = frameSearch.start(_vehicles,1,client);
-			/*
-			if(this.cont!=null) {
-				//client.addContact(cont);
-				//
-				cont=frameSearch.getContract();
-				System.out.println(cont.toString());
-				client.addContact(cont);
-				System.out.println("hereeeeeeeeeeeeeeeeeeeeeee");
-			}*/
+
 			
 			System.out.println("ssssssssssssssssssssssssssssss");
-			//String[] returnVal =frameSearch.get_Search_Options();
-			//while(returnVal==null) {
-			//	returnVal =frameSearch.get_Search_Options();
-			//	}
-			//frameSearch.sortBuyingPriceHighToLowMyFrame(_vehicles);
-			//searchOptionManagment(returnVal);
-			//ClientRentPage clientRentPage = new ClientRentPage
+
 		}
 		
 	}

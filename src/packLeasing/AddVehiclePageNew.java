@@ -30,6 +30,7 @@ public class AddVehiclePageNew {
     private JComboBox<String> sizeComboBox;
     private JCheckBox baggageCheckBox;
     private JButton addButton;
+    private JButton goBackButton;
 
     public AddVehiclePageNew() {
         frame = new JFrame("Add Vehicle");
@@ -143,12 +144,22 @@ public class AddVehiclePageNew {
        
 
         addButton = new JButton("Add Vehicle");
-        addButton.setBounds(200, y, 150, height);
+        addButton.setBounds(120, y, 150, height);
         panel.add(addButton);
+        
+        goBackButton = new JButton("Go back");
+        goBackButton.setBounds(300, y, 150, height);
+        panel.add(goBackButton);
 
         frame.add(panel);
         //frame.setVisible(true);
 
+        goBackButton.addActionListener(e -> {
+        	frame.dispose();
+            AdminMainPage openAdminPage = new AdminMainPage();
+        });
+        
+        
         addButton.addActionListener(e -> {
             this.type = (String) typeComboBox.getSelectedItem();
             this.color = colorField.getText().trim().isEmpty() ? null : colorField.getText();

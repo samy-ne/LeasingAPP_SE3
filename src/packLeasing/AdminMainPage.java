@@ -19,8 +19,6 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
     JFrame f = new JFrame("Admin Page"); // set a topic
     // creates the buttons
     JButton carsButton = new JButton("View all cars");
-//    JButton clientsButton = new JButton("Client details");
-    //JButton sellButton = new JButton("View all contracts");
     JButton buyButton = new JButton("Add a vehicle to list");
     Vehicles _new_vehicle;
 	Object[] options = { "< Quit >", "< Next >"};
@@ -48,21 +46,13 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
         int panelWidth = 800;
         int panelHeight = 600;
 
+        //Button to view all the cars in the system: 
         carsButton.setFont(new Font("Arial", Font.BOLD, 20));
         carsButton.setBounds(5, 5, 250, 100);
         carsButton.addActionListener(this);
         panel.add(carsButton);
 
-//        clientsButton.setFont(new Font("Arial", Font.BOLD, 20));
-//        clientsButton.setBounds(200,5,190,550);
-//        clientsButton.addActionListener(this);
-//        panel.add(clientsButton);
-/*
-        sellButton.setFont(new Font("Arial", Font.BOLD, 20));
-        sellButton.setBounds(267,5,250,100);
-        sellButton.addActionListener(this);
-        panel.add(sellButton);
-        */
+        //Button to add a new car: 
         buyButton.setFont(new Font("Arial", Font.BOLD, 20));
         buyButton.setBounds(530,5,250,100);
         buyButton.addActionListener(this);
@@ -74,7 +64,6 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
         panel.add(backgroundImageLabel);
 
         f.add(panel);
-
     
         f.setVisible(true); // must set as true to see the window
     }
@@ -83,37 +72,29 @@ public class AdminMainPage extends WindowAdapter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==carsButton) {
 			//System.out.println(Main.my_patio._all_vehicles.get(8).toString());
-			admin_print();
 			f.dispose();
+			admin_print();
+			AdminMainPage backToAdminPage = new AdminMainPage();
 			//ClientDataPage clientDataPage = new ClientDataPage
 		}
-//		if (e.getSource()==clientsButton) {
-//			f.dispose();
-//			//ListOfClientsPage clientList = new ListOfClientsPage(***insert the clients vector***);
-//		}
-		/*
-		if (e.getSource()==sellButton) {
-			sell();
-			f.dispose();
-			//ClientRentPage clientRentPage = new ClientRentPage
-		}*/
+//		
 		if (e.getSource()==buyButton) {
 			f.dispose();
 			AddVehiclePageNew addCar = new AddVehiclePageNew();
-			//?????????
 			addCar.start(Main.my_patio._all_vehicles);
 			
-			//this._new_vehicle=addCar.getNewVehicle();
-			//System.out.println(Main.my_patio._all_vehicles.get(10).toString());
 			System.out.println("stammm");
+			
 		}
-		
-		//LoginPage l1 = new Loginage(1);
-		
+				
 	}
+    
+    
     public Vehicles getVehicle() {
     	return _new_vehicle;
     }
+    
+    
     public void admin_print() {
     	for (Iterator iterator = Main.my_patio._all_vehicles.iterator(); iterator.hasNext();) {
     		//System.out.println(Main.my_patio._all_vehicles.get(9).toString());
